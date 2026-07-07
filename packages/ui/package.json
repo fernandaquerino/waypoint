@@ -1,0 +1,21 @@
+{
+  "name": "@waypoint/ui",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "dev": "node -e \"console.log('UI workspace pronto para configurar')\"",
+    "build": "node -e \"console.log('Build de UI pronto para configurar')\"",
+    "lint": "node -e \"console.log('Lint de UI pronto para configurar')\"",
+    "test": "node -e \"console.log('Testes de UI prontos para configurar')\""
+  },
+  "dependencies": {
+    "@waypoint/types": "workspace:*"
+  }
+}

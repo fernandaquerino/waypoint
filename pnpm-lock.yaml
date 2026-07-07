@@ -1,0 +1,32 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .: {}
+
+  apps/api:
+    dependencies:
+      '@waypoint/types':
+        specifier: workspace:*
+        version: link:../../packages/types
+
+  apps/web:
+    dependencies:
+      '@waypoint/types':
+        specifier: workspace:*
+        version: link:../../packages/types
+      '@waypoint/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
+
+  packages/types: {}
+
+  packages/ui:
+    dependencies:
+      '@waypoint/types':
+        specifier: workspace:*
+        version: link:../types
