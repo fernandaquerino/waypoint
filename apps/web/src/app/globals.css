@@ -1,9 +1,54 @@
-:root {
-  color: #111827;
-  background: #f7f8fb;
-  font-family:
+@import "tailwindcss";
+@source "../../../../packages/ui/src";
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-border: var(--border);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-ring: var(--ring);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --font-sans: var(--font-sans);
+  --radius-card: var(--radius-card);
+  --radius-control: var(--radius-control);
+}
+
+:root,
+[data-theme="light"] {
+  --background: #f8fafc;
+  --border: #e5e7eb;
+  --foreground: #111827;
+  --font-sans:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
+  --muted: #6b7280;
+  --primary: #7c6ff7;
+  --primary-foreground: #ffffff;
+  --ring: #7c6ff7;
+  --shadow-soft: 0 18px 50px rgb(15 23 42 / 0.08);
+  --surface: #ffffff;
+  --surface-muted: #eef2ff;
+  --radius-card: 8px;
+  --radius-control: 6px;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --background: #0f172a;
+  --border: #243042;
+  --foreground: #f8fafc;
+  --muted: #a7b0c0;
+  --primary: #a69cff;
+  --primary-foreground: #111827;
+  --ring: #a69cff;
+  --shadow-soft: 0 18px 50px rgb(0 0 0 / 0.24);
+  --surface: #111827;
+  --surface-muted: #1e293b;
+  color-scheme: dark;
 }
 
 * {
@@ -12,66 +57,12 @@
 
 body {
   margin: 0;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
 }
 
 a {
   color: inherit;
-}
-
-.app-shell {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 32px;
-}
-
-.status-panel {
-  width: min(100%, 680px);
-  border: 1px solid #d9e2ec;
-  border-radius: 8px;
-  background: #ffffff;
-  padding: 32px;
-  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
-}
-
-.status-kicker {
-  margin: 0 0 12px;
-  color: #2563eb;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
-
-.status-panel h1 {
-  margin: 0;
-  font-size: clamp(2rem, 6vw, 4rem);
-  line-height: 1;
-}
-
-.status-panel p {
-  max-width: 56ch;
-  margin: 18px 0 0;
-  color: #4b5563;
-  line-height: 1.6;
-}
-
-.status-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 28px;
-}
-
-.status-actions a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 40px;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  padding: 0 14px;
-  color: #111827;
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-decoration: none;
 }
