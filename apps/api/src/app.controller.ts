@@ -9,12 +9,4 @@ export class AppController {
       status: "ready",
     };
   }
-
-  @Get("health")
-  getHealth() {
-    return {
-      status: "ok",
-      service: "@waypoint/api",
-    };
-  }
 }
