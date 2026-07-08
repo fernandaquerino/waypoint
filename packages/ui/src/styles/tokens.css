@@ -30,6 +30,7 @@
   --color-info-soft: var(--info-soft);
 
   --color-danger: var(--danger);
+  --color-danger-light: var(--danger-light);
   --color-danger-soft: var(--danger-soft);
 
   --color-teal: var(--teal);
@@ -86,6 +87,7 @@
   --info-soft: rgba(78, 167, 252, 0.14);
 
   --danger: #eb5757;
+  --danger-light: #eb7c7a;
   --danger-soft: rgba(235, 87, 87, 0.14);
 
   --teal: #00b2bf;
