@@ -66,3 +66,39 @@ pnpm db:studio
 ```
 
 As ferramentas usam `DATABASE_URL`, definida em `.env`. Se voce mudou a porta local do Postgres, atualize tambem essa URL.
+
+## Autenticacao Local
+
+Gere um segredo local e coloque em `.env`:
+
+```sh
+openssl rand -base64 32
+```
+
+Variaveis usadas pela autenticacao:
+
+```env
+AUTH_SECRET=valor-gerado
+AUTH_URL=http://localhost:3000
+API_URL=http://localhost:3333
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+```
+
+`AUTH_SECRET` e compartilhado entre Auth.js e NestJS. O Next.js usa esse segredo para assinar o JWT da sessao, e a API valida o mesmo token nas rotas protegidas.
+
+Fluxos locais:
+
+```sh
+pnpm db:migrate
+pnpm dev
+```
+
+Depois acesse:
+
+- Login: http://localhost:3000/login
+- Cadastro: http://localhost:3000/cadastro
+- Dashboard autenticado: http://localhost:3000/dashboard
+- Rota protegida da API: http://localhost:3333/auth/me
+
+Para Google OAuth, configure no Google Cloud Console a callback URL `http://localhost:3000/api/auth/callback/google` e preencha `GOOGLE_CLIENT_ID` e `GOOGLE_CLIENT_SECRET`.
