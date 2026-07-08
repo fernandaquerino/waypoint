@@ -96,7 +96,7 @@ function Button({
   const isDisabled = disabled || loading;
   const accessibleName = props["aria-label"] ?? props["aria-labelledby"];
 
-  if (!accessibleName) {
+  if (process.env.NODE_ENV !== "production" && !accessibleName) {
     console.warn(
       'Button with size="icon" must include aria-label or aria-labelledby.',
     );

@@ -52,7 +52,7 @@ function Input({
       ? `${inputId}-helper`
       : undefined;
 
-  if (!accessibleName) {
+  if (process.env.NODE_ENV !== "production" && !accessibleName) {
     console.warn("Input must include label, aria-label, or aria-labelledby.");
   }
 
