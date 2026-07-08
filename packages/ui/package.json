@@ -12,10 +12,14 @@
   "scripts": {
     "dev": "node -e \"console.log('UI workspace pronto para configurar')\"",
     "build": "node -e \"console.log('Build de UI pronto para configurar')\"",
-    "lint": "node -e \"console.log('Lint de UI pronto para configurar')\"",
-    "test": "node -e \"console.log('Testes de UI prontos para configurar')\""
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "node -e \"console.log('Sem testes de UI ainda')\""
   },
   "dependencies": {
     "@waypoint/types": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
   }
 }

@@ -1,5 +1,5 @@
 import type { Session } from "next-auth";
-import { auth } from "../auth";
+import { auth } from "@/auth";
 
 /**
  * Lê a sessão atual de forma resiliente.

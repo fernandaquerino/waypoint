@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import { ValidationPipe } from "@nestjs/common";
+import { Logger, ValidationPipe } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app.module";
@@ -30,7 +30,7 @@ async function bootstrap() {
   app.enableShutdownHooks();
 
   await app.listen(port, "0.0.0.0");
-  console.log(`Waypoint API running on http://localhost:${port}`);
+  Logger.log(`Waypoint API running on http://localhost:${port}`, "Bootstrap");
 }
 
 void bootstrap();
