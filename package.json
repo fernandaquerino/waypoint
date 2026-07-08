@@ -11,9 +11,13 @@
     "docker:down": "docker compose down",
     "docker:reset": "docker compose down --volumes --remove-orphans",
     "db:up": "docker compose up postgres",
+    "db:generate": "drizzle-kit generate --config packages/db/drizzle.config.ts",
+    "db:migrate": "drizzle-kit migrate --config packages/db/drizzle.config.ts",
+    "db:studio": "drizzle-kit studio --config packages/db/drizzle.config.ts",
     "build": "pnpm -r build",
     "build:web": "pnpm --filter @waypoint/web build",
     "build:api": "pnpm --filter @waypoint/api build",
+    "build:db": "pnpm --filter @waypoint/db build",
     "build:types": "pnpm --filter @waypoint/types build",
     "build:ui": "pnpm --filter @waypoint/ui build",
     "lint": "pnpm -r lint",
@@ -22,5 +26,9 @@
   "engines": {
     "node": ">=20.0.0",
     "pnpm": ">=10.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^17.4.2",
+    "drizzle-kit": "^0.31.10"
   }
 }

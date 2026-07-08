@@ -1,0 +1,28 @@
+{
+  "name": "@waypoint/db",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema": "./src/schema/index.ts"
+  },
+  "files": [
+    "src",
+    "drizzle"
+  ],
+  "scripts": {
+    "dev": "node -e \"console.log('DB workspace pronto para configurar')\"",
+    "build": "tsc -p tsconfig.json --noEmit",
+    "lint": "node -e \"console.log('Lint de DB pronto para configurar')\"",
+    "test": "node -e \"console.log('Testes de DB prontos para configurar')\""
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.45.2",
+    "postgres": "^3.4.9"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "typescript": "^6.0.3"
+  }
+}

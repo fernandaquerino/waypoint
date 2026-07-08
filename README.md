@@ -42,3 +42,27 @@ Servicos locais:
 - Postgres: localhost:5432
 
 O banco usa o volume `postgres_data`, entao os dados sao mantidos entre reinicios com `docker compose down` e `docker compose up`.
+
+## Banco de Dados
+
+O schema e o client Drizzle ficam em `packages/db`. Os comandos abaixo rodam a partir da raiz do monorepo.
+
+Gerar uma nova migration a partir do schema:
+
+```sh
+pnpm db:generate
+```
+
+Aplicar migrations no PostgreSQL local:
+
+```sh
+pnpm db:migrate
+```
+
+Abrir o Drizzle Studio:
+
+```sh
+pnpm db:studio
+```
+
+As ferramentas usam `DATABASE_URL`, definida em `.env`. Se voce mudou a porta local do Postgres, atualize tambem essa URL.
