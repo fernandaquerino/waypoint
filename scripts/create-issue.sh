@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # ============================================================
-# CareerOS — Criar labels, milestones e issues no GitHub
+# Waypoint — Criar labels, milestones e issues no GitHub
 # Repositório: fernandaquerino/waypoint
 # Project ID: 7
 #
@@ -247,7 +247,7 @@ SPRINT_0_MILESTONE="Sprint 0 - Fundação"
 
 create_issue "[S0-01] Configurar monorepo com pnpm workspaces" "$(cat <<'EOF'
 ## Contexto
-O CareerOS será desenvolvido como um monorepo para manter web, API, tipos compartilhados e UI no mesmo repositório.
+O Waypoint será desenvolvido como um monorepo para manter web, API, tipos compartilhados e UI no mesmo repositório.
 
 Essa base precisa permitir evoluir o produto com organização desde o início, evitando duplicação de tipos e componentes.
 
@@ -348,7 +348,7 @@ EOF
 
 create_issue "[S0-04] Criar setup base do Next.js com App Router, Tailwind e tema" "$(cat <<'EOF'
 ## Contexto
-A aplicação web será a interface principal do CareerOS. A base precisa começar com App Router, Tailwind e suporte a tema para que o design system nasça em código.
+A aplicação web será a interface principal do Waypoint. A base precisa começar com App Router, Tailwind e suporte a tema para que o design system nasça em código.
 
 ## Escopo
 - [ ] Criar app Next.js em `apps/web`
@@ -380,7 +380,7 @@ EOF
 
 create_issue "[S0-05] Configurar Prisma com schema base de usuário" "$(cat <<'EOF'
 ## Contexto
-O CareerOS usará PostgreSQL como banco principal. A Sprint 0 precisa deixar o Prisma pronto para migrations futuras e para autenticação.
+O Waypoint usará PostgreSQL como banco principal. A Sprint 0 precisa deixar o Prisma pronto para migrations futuras e para autenticação.
 
 ## Escopo
 - [ ] Instalar e configurar Prisma
@@ -556,7 +556,7 @@ EOF
 
 create_issue "[S0-10] Escrever ADR-001: Modelo polimórfico de Entry" "$(cat <<'EOF'
 ## Contexto
-Entry é o core do CareerOS. Ela representa qualquer coisa capturada rapidamente: aprendizado, conquista, dúvida, tarefa, link, estudo, decisão técnica e feedback.
+Entry é o core do Waypoint. Ela representa qualquer coisa capturada rapidamente: aprendizado, conquista, dúvida, tarefa, link, estudo, decisão técnica e feedback.
 
 Antes de implementar o schema real, precisamos decidir se usaremos table-per-type ou JSONB.
 
