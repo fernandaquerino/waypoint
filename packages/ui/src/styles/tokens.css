@@ -1,61 +1,198 @@
-/**
- * Tokens do design system Waypoint.
- *
- * Fonte única das variáveis de cor, tipografia e radius. Consumido pelo
- * Storybook (`.storybook/preview.css`) e disponível para o app web via
- * `@import "@waypoint/ui/styles/tokens.css"`.
- *
- * `@theme inline` mapeia as CSS variables para utilitários do Tailwind v4
- * (ex.: `bg-primary`, `text-foreground`, `rounded-control`).
- */
 @theme inline {
   --color-background: var(--background);
-  --color-border: var(--border);
-  --color-danger: var(--danger);
   --color-foreground: var(--foreground);
-  --color-muted: var(--muted);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-ring: var(--ring);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+
   --color-surface: var(--surface);
   --color-surface-muted: var(--surface-muted);
+  --color-surface-hover: var(--surface-hover);
+
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-muted: var(--primary-muted);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+
+  --color-teal: var(--teal);
+  --color-teal-soft: var(--teal-soft);
+
+  --color-purple: var(--purple);
+  --color-purple-soft: var(--purple-soft);
+
+  --color-ring: var(--ring);
+
   --font-sans: var(--font-sans);
+
   --radius-card: var(--radius-card);
   --radius-control: var(--radius-control);
 }
 
 :root,
 [data-theme="light"] {
-  --background: #f8fafc;
-  --border: #e5e7eb;
+  /* Base */
+  --background: #fafafb;
   --foreground: #111827;
-  --danger: #b42318;
+
+  /* Layout */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #111827;
+
+  /* Surfaces */
+  --surface: #ffffff;
+  --surface-muted: #f4f5fb;
+  --surface-hover: #eeeffc;
+
+  /* Text */
+  --muted: #f4f5fb;
+  --muted-foreground: #6b6f76;
+
+  /* Borders */
+  --border: #e0e1ec;
+  --border-strong: #d2d3e0;
+
+  /* Brand - Linear inspired */
+  --primary: #5e6ad2;
+  --primary-hover: #575bc7;
+  --primary-muted: rgba(94, 106, 210, 0.12);
+  --primary-foreground: #ffffff;
+
+  /* Categories */
+  --success: #4cb782;
+  --success-soft: rgba(76, 183, 130, 0.14);
+
+  --warning: #f2c94c;
+  --warning-soft: rgba(242, 201, 76, 0.18);
+
+  --info: #4ea7fc;
+  --info-soft: rgba(78, 167, 252, 0.14);
+
+  --danger: #eb5757;
+  --danger-soft: rgba(235, 87, 87, 0.14);
+
+  --teal: #00b2bf;
+  --teal-soft: rgba(0, 178, 191, 0.14);
+
+  --purple: #bb87fc;
+  --purple-soft: rgba(187, 135, 252, 0.14);
+
+  /* Focus */
+  --ring: #5e6ad2;
+
+  /* Shadow & radius */
+  --shadow-soft: 0 18px 50px rgb(15 23 42 / 0.08);
+  --radius-card: 8px;
+  --radius-control: 6px;
+
+  color-scheme: light;
+
   --font-sans:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  --muted: #6b7280;
-  --primary: #7c6ff7;
-  --primary-foreground: #ffffff;
-  --ring: #7c6ff7;
-  --shadow-soft: 0 18px 50px rgb(15 23 42 / 0.08);
-  --surface: #ffffff;
-  --surface-muted: #eef2ff;
-  --radius-card: 8px;
-  --radius-control: 6px;
-  color-scheme: light;
 }
 
 [data-theme="dark"] {
-  --background: #0f172a;
-  --border: #243042;
-  --foreground: #f8fafc;
-  --danger: #f97066;
-  --muted: #a7b0c0;
-  --primary: #a69cff;
-  --primary-foreground: #111827;
-  --ring: #a69cff;
+  /* Base */
+  --background: #181921;
+  --foreground: #eeeffc;
+
+  /* Layout */
+  --sidebar: #151621;
+  --sidebar-foreground: #eeeffc;
+
+  /* Surfaces */
+  --surface: #1d1e2b;
+  --surface-muted: #21232e;
+  --surface-hover: #272832;
+
+  /* Text */
+  --muted: #21232e;
+  --muted-foreground: #8d8ba3;
+
+  /* Borders */
+  --border: rgba(82, 82, 111, 0.25);
+  --border-strong: rgba(94, 93, 123, 0.44);
+
+  /* Brand - Linear inspired */
+  --primary: #6c79ff;
+  --primary-hover: #7477f0;
+  --primary-muted: rgba(108, 121, 255, 0.16);
+  --primary-foreground: #ffffff;
+
+  /* Categories */
+  --success: #4cb782;
+  --success-soft: rgba(76, 183, 130, 0.16);
+
+  --warning: #f2c94c;
+  --warning-soft: rgba(242, 201, 76, 0.16);
+
+  --info: #4ea7fc;
+  --info-soft: rgba(78, 167, 252, 0.16);
+
+  --danger: #fa6563;
+  --danger-soft: rgba(250, 101, 99, 0.16);
+
+  --teal: #00b2bf;
+  --teal-soft: rgba(0, 178, 191, 0.16);
+
+  --purple: #bb87fc;
+  --purple-soft: rgba(187, 135, 252, 0.16);
+
+  /* Focus */
+  --ring: #6c79ff;
+
+  /* Shadow */
   --shadow-soft: 0 18px 50px rgb(0 0 0 / 0.24);
-  --surface: #111827;
-  --surface-muted: #1e293b;
+
   color-scheme: dark;
+}
+
+@utility tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--primary) 18%, transparent);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
 }

@@ -20,7 +20,8 @@
     "test": "node -e \"console.log('Sem testes de UI ainda')\""
   },
   "dependencies": {
-    "@waypoint/types": "workspace:*"
+    "@waypoint/types": "workspace:*",
+    "class-variance-authority": "^0.7.1"
   },
   "peerDependencies": {
     "react": "^19",
