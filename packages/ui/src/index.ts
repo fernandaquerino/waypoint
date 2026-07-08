@@ -8,6 +8,7 @@ export * from "./components/Badge";
 export * from "./components/Chip";
 export * from "./components/Checkbox";
 export * from "./components/Dialog";
+export * from "./components/Drawer";
 export * from "./components/Select";
 export * from "./components/Switch";
 export * from "./components/Skeleton";
