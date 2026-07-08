@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import "../src/styles/tokens.css";
+
+/* Escaneia os componentes do design system em busca das classes usadas. */
+@source "../src";
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
