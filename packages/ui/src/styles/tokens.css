@@ -81,15 +81,19 @@
 
   /* Categories */
   --success: #4cb782;
+  --success-foreground: #ffffff;
   --success-soft: rgba(76, 183, 130, 0.14);
 
   --warning: #f2c94c;
+  --warning-foreground: #ffffff;
   --warning-soft: rgba(242, 201, 76, 0.18);
 
   --info: #4ea7fc;
+  --info-foreground: #ffffff;
   --info-soft: rgba(78, 167, 252, 0.14);
 
   --danger: #eb5757;
+  --danger-foreground: #ffffff;
   --danger-light: #eb7c7a;
   --danger-soft: rgba(235, 87, 87, 0.14);
 
