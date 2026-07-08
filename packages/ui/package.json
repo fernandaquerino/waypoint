@@ -4,14 +4,17 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./styles/tokens.css": "./src/styles/tokens.css"
   },
   "files": [
     "src"
   ],
   "scripts": {
-    "dev": "node -e \"console.log('UI workspace pronto para configurar')\"",
+    "dev": "storybook dev -p 6006",
     "build": "node -e \"console.log('Build de UI pronto para configurar')\"",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test": "node -e \"console.log('Sem testes de UI ainda')\""
@@ -19,7 +22,21 @@
   "dependencies": {
     "@waypoint/types": "workspace:*"
   },
+  "peerDependencies": {
+    "react": "^19",
+    "react-dom": "^19"
+  },
   "devDependencies": {
-    "typescript": "^6.0.3"
+    "@storybook/addon-a11y": "^10.4.6",
+    "@storybook/react-vite": "^10.4.6",
+    "@tailwindcss/vite": "^4.3.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "storybook": "^10.4.6",
+    "typescript": "^6.0.3",
+    "vite": "^8.1.3"
   }
 }

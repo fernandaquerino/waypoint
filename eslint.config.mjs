@@ -27,6 +27,7 @@ export default tseslint.config(
       "**/.next/**",
       "**/coverage/**",
       "**/*.tsbuildinfo",
+      "**/storybook-static/**", // build estático do Storybook
       "packages/db/drizzle/**", // migrations geradas pelo drizzle-kit
       "apps/web/next-env.d.ts", // gerado pelo Next
     ],
@@ -62,9 +63,24 @@ export default tseslint.config(
 
   // Pacotes de biblioteca — ambiente Node por padrão.
   {
-    files: ["packages/**/*.ts"],
+    files: ["packages/**/*.{ts,tsx}"],
     languageOptions: {
       globals: { ...globals.node },
+    },
+  },
+
+  // Componentes do design system (packages/ui) — React em ambiente browser.
+  {
+    files: ["packages/ui/**/*.{ts,tsx}"],
+    plugins: {
+      "react-hooks": reactHooks,
+    },
+    languageOptions: {
+      globals: { ...globals.browser },
+    },
+    rules: {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
     },
   },
 

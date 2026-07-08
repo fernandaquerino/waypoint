@@ -20,6 +20,8 @@
     "build:db": "pnpm --filter @waypoint/db build",
     "build:types": "pnpm --filter @waypoint/types build",
     "build:ui": "pnpm --filter @waypoint/ui build",
+    "storybook": "pnpm --filter @waypoint/ui storybook",
+    "build-storybook": "pnpm --filter @waypoint/ui build-storybook",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "typecheck": "pnpm --filter @waypoint/db build && pnpm -r typecheck",
