@@ -4,16 +4,22 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts",
-    "./schema": "./src/schema/index.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./schema": {
+      "types": "./dist/schema/index.d.ts",
+      "import": "./dist/schema/index.js"
+    }
   },
   "files": [
-    "src",
+    "dist",
     "drizzle"
   ],
   "scripts": {
-    "dev": "node -e \"console.log('DB workspace pronto para configurar')\"",
-    "build": "tsc -p tsconfig.json --noEmit",
+    "dev": "tsc -p tsconfig.json --watch --preserveWatchOutput",
+    "build": "tsc -p tsconfig.json",
     "lint": "node -e \"console.log('Lint de DB pronto para configurar')\"",
     "test": "node -e \"console.log('Testes de DB prontos para configurar')\""
   },

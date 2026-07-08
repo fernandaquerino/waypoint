@@ -1,6 +1,7 @@
 import { ThemeToggle } from "../components/theme/theme-toggle";
+import { getApiUrl } from "../lib/api-url";
 
-const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3333";
+const apiUrl = getApiUrl();
 
 export default function Home() {
   return (
@@ -30,8 +31,20 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href={`${apiUrl}/health`}
+                href="/login"
                 className="inline-flex min-h-11 items-center justify-center rounded-control bg-primary px-4 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-soft)] outline-none transition hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ring)]"
+              >
+                Entrar
+              </a>
+              <a
+                href="/dashboard"
+                className="inline-flex min-h-11 items-center justify-center rounded-control border border-border bg-surface px-4 text-sm font-semibold text-foreground outline-none transition hover:bg-surface-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ring)]"
+              >
+                Abrir dashboard
+              </a>
+              <a
+                href={`${apiUrl}/health`}
+                className="inline-flex min-h-11 items-center justify-center rounded-control border border-border bg-surface px-4 text-sm font-semibold text-foreground outline-none transition hover:bg-surface-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ring)]"
               >
                 Ver health da API
               </a>

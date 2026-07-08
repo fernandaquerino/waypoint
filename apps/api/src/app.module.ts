@@ -5,6 +5,7 @@ import { appConfig } from "./config/app.config";
 import { envFilePaths } from "./config/env-file-paths";
 import { validateEnvironment } from "./config/env.validation";
 import { HealthModule } from "./health/health.module";
+import { AuthModule } from "./modules/auth/auth.module";
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { HealthModule } from "./health/health.module";
       load: [appConfig],
       validate: validateEnvironment,
     }),
+    AuthModule,
     HealthModule,
   ],
   controllers: [AppController],
