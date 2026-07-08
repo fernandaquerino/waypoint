@@ -45,7 +45,7 @@ type ButtonA11yProps =
   | {
       size: "icon";
       "aria-label": string;
-      "aria-labelledby": string;
+      "aria-labelledby"?: string;
     }
   | {
       size?: Exclude<ButtonSize, "icon">;
