@@ -9,3 +9,4 @@ export * from "./components/Chip";
 export * from "./components/Checkbox";
 export * from "./components/Select";
 export * from "./components/Switch";
+export * from "./components/Skeleton";
