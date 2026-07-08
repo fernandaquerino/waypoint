@@ -120,7 +120,7 @@ Não adicione bibliotecas fora desta stack sem justificar claramente o trade-off
 | Backend/BFF | NestJS                                                             |
 | Linguagem   | TypeScript strict                                                  |
 | Banco       | PostgreSQL                                                         |
-| ORM         | Prisma, salvo ADR contrária                                        |
+| ORM         | Drizzle ORM + drizzle-kit                                          |
 | Auth        | Auth.js no Next.js + JWT validado no NestJS                        |
 | UI          | Tailwind CSS + componentes próprios em `packages/ui`               |
 | Validação   | Zod em `packages/types` quando fizer sentido compartilhar contrato |
@@ -156,7 +156,7 @@ A estrutura alvo do monorepo é:
 │   │   │   ├── app.module.ts
 │   │   │   ├── config/              # config tipada/env validation
 │   │   │   ├── common/              # pipes, filters, guards, interceptors genéricos
-│   │   │   ├── database/            # PrismaService e infra de banco
+│   │   │   ├── database/            # providers NestJS para Drizzle / @waypoint/db
 │   │   │   └── modules/             # módulos por domínio
 │   │   │       ├── auth/
 │   │   │       ├── users/
@@ -221,6 +221,18 @@ A estrutura alvo do monorepo é:
 │       └── package.json
 │
 ├── packages/
+│   ├── db/                           # Drizzle schema, client, migrations e seed
+│   │   ├── src/
+│   │   │   ├── client.ts             # criação do client Drizzle
+│   │   │   ├── index.ts              # exports públicos do pacote
+│   │   │   └── schema/
+│   │   │       ├── users.ts
+│   │   │       └── index.ts
+│   │   ├── drizzle/                  # migrations geradas pelo drizzle-kit
+│   │   ├── seed.ts
+│   │   ├── drizzle.config.ts
+│   │   └── package.json
+│   │
 │   ├── types/                        # tipos, enums, Zod schemas e contratos compartilhados
 │   │   └── src/
 │   │       ├── entries/
@@ -243,11 +255,6 @@ A estrutura alvo do monorepo é:
 │           │   └── dialog/
 │           ├── icons/
 │           └── utils/
-│
-├── prisma/                           # schema, migrations, seed
-│   ├── schema.prisma
-│   ├── migrations/
-│   └── seed.ts
 │
 ├── docs/
 │   ├── adr/
@@ -299,7 +306,7 @@ Regras:
 
 - controller é fino;
 - service contém regra de negócio;
-- repository contém acesso ao Prisma;
+- repository contém acesso ao Drizzle por meio do pacote `@waypoint/db`;
 - DTO valida entrada/saída;
 - mapper converte banco → resposta;
 - módulo não deve acessar diretamente repository de outro domínio sem service público ou caso de uso claro.
@@ -363,18 +370,26 @@ Use para contratos compartilhados:
 - DTOs compartilhados;
 - tipos de API quando usados por web e api.
 
-Não coloque lógica de banco, React, NestJS ou Prisma aqui.
+Não coloque lógica de banco, React, NestJS ou Drizzle aqui.
 
-### `prisma`
+### `packages/db`
 
 Use para:
 
-- `schema.prisma`;
-- migrations geradas;
+- schema Drizzle separado por domínio;
+- client Drizzle e helpers mínimos de conexão;
+- migrations geradas pelo `drizzle-kit`;
 - seed local;
-- scripts de reset/dev.
+- scripts de reset/dev quando fizer sentido.
 
-Nunca edite migrations antigas manualmente depois de aplicadas. Crie nova migration.
+Regras:
+
+- schema fica em `packages/db/src/schema/`;
+- migrations ficam em `packages/db/drizzle/`;
+- `drizzle.config.ts` fica em `packages/db/`;
+- não coloque regra de negócio neste pacote;
+- não importe NestJS ou React em `packages/db`;
+- nunca edite migrations antigas manualmente depois de aplicadas. Crie nova migration.
 
 ### `docs/adr`
 
@@ -400,12 +415,12 @@ Estas regras são obrigatórias.
 
 - Não criar lógica de negócio dentro de componente React.
 - Não criar lógica de negócio dentro de controller NestJS.
-- Não acessar Prisma diretamente pelo frontend.
+- Não acessar Drizzle diretamente pelo frontend.
 - Não duplicar regra de negócio no Next e no Nest.
 - Não criar `utils.ts` gigante.
 - Não criar store global monolítica para tudo.
 - Não salvar dados de servidor em Zustand/localStorage como fonte de verdade.
-- Não criar tipos duplicados quando eles podem vir de `packages/types` ou Prisma.
+- Não criar tipos duplicados quando eles podem vir de `packages/types` ou dos schemas inferidos do Drizzle.
 - Não criar abstração com apenas um uso real.
 - Não refatorar arquitetura inteira durante uma issue pequena.
 
@@ -697,7 +712,7 @@ Issues:
 - Docker Compose com Postgres 16, API e Web;
 - setup base do NestJS;
 - setup base do Next.js com App Router, Tailwind e tema;
-- Prisma schema base;
+- Drizzle schema base com tabela `users`;
 - Auth.js no Next + JWT guard no NestJS;
 - CI com lint, typecheck e test;
 - design system mínimo em `packages/ui`;
@@ -813,7 +828,7 @@ Controllers devem:
 Controllers não devem:
 
 - conter regra de negócio;
-- montar query Prisma complexa;
+- montar query Drizzle complexa;
 - decidir lógica de domínio;
 - fazer transformação pesada.
 
@@ -830,7 +845,7 @@ Services devem:
 
 Repositories devem:
 
-- ser a única camada que fala diretamente com Prisma;
+- ser a única camada de domínio que fala diretamente com Drizzle;
 - sempre filtrar por `userId` em dados de domínio;
 - não retornar dados sensíveis desnecessários;
 - não conter regra complexa de produto.
@@ -1071,13 +1086,17 @@ Evite:
 
 ---
 
-## 14. Banco de dados e Prisma
+## 14. Banco de dados e Drizzle
 
 ### Convenções
 
-- Modelos Prisma em PascalCase.
-- Campos TypeScript/Prisma em camelCase.
-- Tabelas podem usar `@@map("snake_case")` se necessário.
+- Drizzle ORM é a fonte oficial de schema e migrations.
+- Schema fica em `packages/db/src/schema/`, separado por domínio.
+- Migrations geradas ficam em `packages/db/drizzle/`.
+- Use `drizzle.config.ts` em `packages/db/`.
+- Nomes de tabelas e colunas no banco devem usar `snake_case`.
+- Nomes TypeScript devem usar `camelCase`.
+- Use helpers do Drizzle como `pgTable`, `uuid`, `text`, `timestamp`, `boolean`, `integer`, `pgEnum`, `index` e `uniqueIndex`.
 - Toda entidade de domínio deve ter `id`, `userId`, `createdAt`, `updatedAt`.
 - Use `deletedAt` em entidades principais quando fizer sentido preservar histórico.
 
@@ -1086,9 +1105,103 @@ Evite:
 - Toda query de domínio deve filtrar por `userId`.
 - Não aceitar `userId` do client.
 - Não criar tabela de domínio sem FK para usuário, salvo exceção documentada.
-- Não editar migration antiga aplicada.
+- Não editar migration antiga aplicada manualmente.
 - Não usar JSONB como desculpa para não modelar o domínio.
 - Não remover dados em cascata sem entender impacto.
+- Não espalhar schema Drizzle dentro de `apps/web` ou `apps/api/modules`.
+- Não criar client Drizzle novo em cada repository. Reutilize o client/provider definido na camada de database.
+- Não usar SQL raw quando o query builder do Drizzle resolve de forma clara.
+- SQL raw só é permitido com justificativa, tipagem e cuidado com injection.
+
+### Estrutura recomendada do pacote de banco
+
+```txt
+packages/db/
+├── src/
+│   ├── client.ts
+│   ├── index.ts
+│   └── schema/
+│       ├── users.ts
+│       ├── entries.ts              # Sprint 1+
+│       ├── professional-moments.ts # Sprint 3+
+│       ├── study.ts                # Sprint 4+
+│       ├── interviews.ts           # Sprint 8+
+│       └── index.ts
+├── drizzle/
+│   └── ... migrations geradas
+├── seed.ts
+├── drizzle.config.ts
+└── package.json
+```
+
+### Schema Drizzle
+
+Regras para schemas:
+
+- Cada arquivo deve representar um domínio ou conjunto pequeno de tabelas relacionadas.
+- `users.ts` deve conter a tabela inicial `users` da Sprint 0.
+- `index.ts` deve exportar todas as tabelas e enums.
+- Enums compartilhados devem ser definidos com `pgEnum` quando forem persistidos no banco.
+- Índices devem ser declarados no schema junto da tabela.
+- Constraints importantes devem ser explícitas, não apenas validadas na aplicação.
+
+Exemplo conceitual:
+
+```ts
+export const users = pgTable("users", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  name: text("name"),
+  email: text("email").notNull().unique(),
+  image: text("image"),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  updatedAt: timestamp("updated_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+});
+```
+
+### Migrations
+
+- Gere migrations com `drizzle-kit generate`.
+- Aplique migrations com `drizzle-kit migrate`.
+- Revise o SQL gerado antes de considerar pronto.
+- Nunca edite uma migration antiga já aplicada. Gere uma nova.
+- Migration quebrada em ambiente local pode ser resetada apenas se não houver dados reais.
+- CI deve validar typecheck e, quando configurado, consistência de migrations.
+
+### Repositories com Drizzle
+
+Repositories devem:
+
+- receber ou importar o client Drizzle por um ponto central;
+- usar os schemas exportados por `@waypoint/db`;
+- sempre filtrar por `userId` em entidades de domínio;
+- retornar apenas os dados necessários;
+- manter query clara e testável.
+
+Exemplo conceitual:
+
+```ts
+await db
+  .select()
+  .from(entries)
+  .where(and(eq(entries.id, id), eq(entries.userId, userId)));
+```
+
+Nunca:
+
+```ts
+await db.select().from(entries).where(eq(entries.id, id));
+```
+
+### Tipos inferidos
+
+- Use `$inferSelect` e `$inferInsert` quando fizer sentido.
+- Tipos de banco não substituem contratos de API quando a resposta pública é diferente.
+- Não exporte detalhes internos de tabela diretamente para componentes React.
+- DTOs de API podem ser definidos em `packages/types` com Zod.
 
 ### Soft delete
 
@@ -1106,6 +1219,12 @@ Hard delete apenas em fluxo explícito de exclusão de conta ou reset local.
 
 Seeds devem usar dados fictícios e realistas.  
 Não colocar dados pessoais reais da usuária em seed público.
+
+### Drizzle Studio
+
+- `pnpm db:studio` deve abrir Drizzle Studio.
+- Drizzle Studio é ferramenta de desenvolvimento, não feature de produto.
+- Não dependa do Studio para validar regra de negócio; use testes ou fluxo real.
 
 ---
 
@@ -1240,7 +1359,7 @@ Use para:
 Use para:
 
 - service + repository;
-- Prisma com banco de teste;
+- Drizzle com banco de teste;
 - autorização por usuário;
 - fluxos de criação/listagem.
 
@@ -1527,7 +1646,7 @@ No começo do projeto, priorize a Sprint 0:
 2. Docker Compose;
 3. NestJS base;
 4. Next.js base;
-5. Prisma base;
+5. Drizzle base;
 6. Auth;
 7. CI;
 8. design system mínimo;
