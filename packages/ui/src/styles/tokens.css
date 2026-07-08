@@ -45,6 +45,9 @@
 
   --radius-card: var(--radius-card);
   --radius-control: var(--radius-control);
+
+  --shadow-card: var(--shadow-card);
+  --shadow-soft: var(--shadow-soft);
 }
 
 :root,
@@ -101,6 +104,8 @@
 
   /* Shadow & radius */
   --shadow-soft: 0 18px 50px rgb(15 23 42 / 0.08);
+  --shadow-card: 0 1px 2px rgb(15 23 42 / 0.04);
+  --shadow-pop: 0 8px 28px rgb(15 23 42 / 0.12);
   --radius-card: 8px;
   --radius-control: 6px;
 
@@ -169,6 +174,14 @@
 
 @utility tabular-nums {
   font-variant-numeric: tabular-nums;
+}
+
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+@utility shadow-pop {
+  box-shadow: var(--shadow-pop);
 }
 
 * {
