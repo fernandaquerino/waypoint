@@ -7,8 +7,9 @@
     "dev": "pnpm --filter @waypoint/db build && pnpm build && node dist/main.js",
     "start": "node dist/main.js",
     "build": "tsc -p tsconfig.build.json",
-    "lint": "node -e \"console.log('Lint da API pronto para configurar')\"",
-    "test": "node -e \"console.log('Testes da API prontos para configurar')\""
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "node -e \"console.log('Sem testes na API ainda')\""
   },
   "dependencies": {
     "@nestjs/common": "^11.1.27",

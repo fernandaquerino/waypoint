@@ -7,8 +7,9 @@
     "dev": "pnpm --filter @waypoint/db build && next dev --webpack --hostname 0.0.0.0 --port 3000",
     "start": "next start --hostname 0.0.0.0 --port 3000",
     "build": "pnpm --filter @waypoint/db build && next build",
-    "lint": "node -e \"console.log('Lint da Web pronto para configurar')\"",
-    "test": "node -e \"console.log('Testes da Web prontos para configurar')\""
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "node -e \"console.log('Sem testes na Web ainda')\""
   },
   "dependencies": {
     "@auth/drizzle-adapter": "^1.11.2",

@@ -12,7 +12,11 @@
   "scripts": {
     "dev": "node -e \"console.log('Types workspace pronto para configurar')\"",
     "build": "node -e \"console.log('Build de types pronto para configurar')\"",
-    "lint": "node -e \"console.log('Lint de types pronto para configurar')\"",
-    "test": "node -e \"console.log('Testes de types prontos para configurar')\""
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "node -e \"console.log('Sem testes de types ainda')\""
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
   }
 }

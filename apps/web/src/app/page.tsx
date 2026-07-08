@@ -1,5 +1,5 @@
-import { ThemeToggle } from "../components/theme/theme-toggle";
-import { getApiUrl } from "../lib/api-url";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
+import { getApiUrl } from "@/lib/api-url";
 
 const apiUrl = getApiUrl();
 
@@ -64,7 +64,9 @@ export default function Home() {
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="text-sm font-semibold text-primary">Base web</p>
-                <h2 className="mt-2 text-2xl font-semibold">Pronta para evoluir</h2>
+                <h2 className="mt-2 text-2xl font-semibold">
+                  Pronta para evoluir
+                </h2>
               </div>
               <span className="rounded-control bg-surface-muted px-2.5 py-1 text-xs font-semibold text-foreground">
                 Sprint 0

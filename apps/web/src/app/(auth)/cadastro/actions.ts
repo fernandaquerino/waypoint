@@ -1,8 +1,8 @@
 "use server";
 
 import { AuthError } from "next-auth";
-import { getApiUrl } from "../../../lib/api-url";
-import { signIn } from "../../../auth";
+import { getApiUrl } from "@/lib/api-url";
+import { signIn } from "@/auth";
 
 export type RegisterActionState = {
   message: string | null;
@@ -45,7 +45,9 @@ export async function registerWithCredentials(
     return { message: null };
   } catch (error) {
     if (error instanceof AuthError) {
-      return { message: "Conta criada, mas não foi possível entrar automaticamente." };
+      return {
+        message: "Conta criada, mas não foi possível entrar automaticamente.",
+      };
     }
 
     throw error;

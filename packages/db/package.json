@@ -20,8 +20,9 @@
   "scripts": {
     "dev": "tsc -p tsconfig.json --watch --preserveWatchOutput",
     "build": "tsc -p tsconfig.json",
-    "lint": "node -e \"console.log('Lint de DB pronto para configurar')\"",
-    "test": "node -e \"console.log('Testes de DB prontos para configurar')\""
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "node -e \"console.log('Sem testes de DB ainda')\""
   },
   "dependencies": {
     "drizzle-orm": "^0.45.2",
