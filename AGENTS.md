@@ -1,151 +1,151 @@
 # AGENTS.md — Waypoint
 
-> Instruções persistentes para agentes de IA trabalhando neste repositório.
-> Leia este arquivo antes de qualquer alteração. Ele é o contrato de produto, arquitetura, pastas, escopo e qualidade.
+> Persistent instructions for AI agents working in this repository.
+> Read this file before making any change. It is the contract for product, architecture, folders, scope and quality.
 
 ---
 
-## 0. Como usar este arquivo
+## 0. How to use this file
 
-Este arquivo deve orientar qualquer agente de IA, como Codex, Claude Code ou Cursor Agent, ao trabalhar no projeto **Waypoint**.
+This file should guide any AI agent, such as Codex, Claude Code or Cursor Agent, when working on the **Waypoint** project.
 
-Antes de agir:
+Before acting:
 
-1. Leia este `AGENTS.md`.
-2. Leia a issue ou pedido atual.
-3. Leia os arquivos relevantes do repositório antes de editar.
-4. Faça a menor mudança completa possível.
-5. Rode as validações disponíveis.
-6. Explique no final o que mudou, onde mudou, o que foi validado e o que ficou pendente.
+1. Read this `AGENTS.md`.
+2. Read the current issue or request.
+3. Read the relevant repository files before editing.
+4. Make the smallest complete change possible.
+5. Run the available checks.
+6. At the end, explain what changed, where it changed, what was validated and what is still pending.
 
-Este projeto é pessoal, mas deve ser tratado como produto real: **production-minded, portfolio-grade, incremental, testável e seguro**.
-
----
-
-## 1. Visão do produto
-
-**Nome do produto:** Waypoint  
-**Repositório:** `fernandaquerino/waypoint`  
-**Tipo:** app pessoal de organização profissional, estudos e evolução de carreira.  
-**Usuária principal:** Fernanda, desenvolvedora em evolução profissional, usando o app para organizar onboarding, estudos, entregas, conquistas, dúvidas e próximos passos.
-
-O Waypoint é um painel pessoal de carreira. Ele ajuda a responder:
-
-- Em que momento profissional estou agora?
-- O que preciso fazer hoje?
-- O que estou estudando?
-- Que dúvidas estão abertas?
-- O que aprendi recentemente?
-- Que decisões técnicas tomei?
-- Que conquistas profissionais preciso lembrar?
-- Que links, cursos, livros e recursos estou usando?
-- Como estou evoluindo nas minhas skills?
-- Quais próximos passos fazem sentido para minha carreira?
-
-A dor central do produto:
-
-> Nada importante da carreira deve ficar apenas na cabeça da usuária.
-
-O app não é um todo list genérico. O app é uma memória profissional organizada.
+This project is personal, but it should be treated as a real product: **production-minded, portfolio-grade, incremental, testable and secure**.
 
 ---
 
-## 2. Princípios de produto
+## 1. Product vision
 
-1. **Clareza antes de quantidade.** O app deve reduzir ansiedade, não criar uma central infinita de pendências.
-2. **Captura rápida é o coração.** Registrar aprendizado, dúvida, tarefa, link ou conquista deve exigir poucos cliques.
-3. **Conquistas são feature central.** O produto deve ajudar a usuária a lembrar evidências profissionais para entrevistas, currículo, LinkedIn e avaliação de performance.
-4. **Work log vira memória.** O diário de trabalho deve transformar dias confusos em progresso visível.
-5. **Cada sprint entrega algo usável de ponta a ponta.** Evite “sprint só backend” ou “sprint só layout”.
-6. **CRUD antes de IA.** IA está fora da v1. A estrutura de dados precisa provar valor antes de automação.
-7. **Design system nasce em código.** Não criar mockups soltos que não viram componente real.
-8. **Interface em português brasileiro.** Código pode usar inglês. UI deve usar PT-BR.
-9. **Dados pessoais são privados.** Energia profissional, entrevistas, conquistas e anotações são dados sensíveis.
-10. **Melhor uma feature simples funcionando do que uma feature ambiciosa pela metade.**
+**Product name:** Waypoint  
+**Repository:** `fernandaquerino/waypoint`  
+**Type:** personal app for professional organization, studies and career growth.  
+**Primary user:** Fernanda, a developer growing professionally, using the app to organize onboarding, studies, deliverables, achievements, questions and next steps.
+
+Waypoint is a personal career dashboard. It helps answer:
+
+- Where am I professionally right now?
+- What do I need to do today?
+- What am I studying?
+- Which questions are still open?
+- What did I learn recently?
+- Which technical decisions did I make?
+- Which professional achievements do I need to remember?
+- Which links, courses, books and resources am I using?
+- How am I evolving in my skills?
+- Which next steps make sense for my career?
+
+The product's core pain:
+
+> Nothing important about your career should live only in your head.
+
+The app is not a generic to-do list. The app is an organized professional memory.
 
 ---
 
-## 3. Escopo da v1
+## 2. Product principles
 
-A v1 deve conter:
+1. **Clarity before quantity.** The app should reduce anxiety, not create an infinite hub of pending items.
+2. **Quick capture is the heart.** Recording a learning, question, task, link or achievement should take very few clicks.
+3. **Achievements are a central feature.** The product should help the user remember professional evidence for interviews, résumés, LinkedIn and performance reviews.
+4. **The work log becomes memory.** The work diary should turn confusing days into visible progress.
+5. **Every sprint ships something usable end to end.** Avoid "backend-only sprints" or "layout-only sprints".
+6. **CRUD before AI.** AI is out of v1. The data structure needs to prove its value before automation.
+7. **The design system is born in code.** Don't create loose mockups that never become real components.
+8. **Interface in Brazilian Portuguese.** Code can use English. The UI should use PT-BR.
+9. **Personal data is private.** Professional energy, interviews, achievements and notes are sensitive data.
+10. **A simple working feature beats an ambitious half-done one.**
 
-- autenticação e usuário;
-- dashboard inicial;
-- registro rápido / Entry core;
-- tarefas de hoje;
-- momento profissional;
+---
+
+## 3. v1 scope
+
+v1 should contain:
+
+- authentication and user;
+- initial dashboard;
+- quick capture / Entry core;
+- today's tasks;
+- professional moment;
 - work log;
-- estudos;
-- dúvidas;
-- conquistas / brag document;
-- links úteis;
-- projetos;
+- studies;
+- questions;
+- achievements / brag document;
+- useful links;
+- projects;
 - skills;
-- entrevistas;
-- review semanal;
-- foco da semana;
-- energia profissional;
-- busca, tags e filtros;
-- empty states, loading, error, toasts, README e deploy.
+- interviews;
+- weekly review;
+- weekly focus;
+- professional energy;
+- search, tags and filters;
+- empty states, loading, error, toasts, README and deploy.
 
-### Fora da v1
+### Out of v1
 
-Não implemente na v1 sem uma issue explícita e uma ADR aprovada:
+Don't implement in v1 without an explicit issue and an approved ADR:
 
-- IA generativa;
-- resumo semanal com IA;
-- comparação automática de currículo × job description;
+- generative AI;
+- weekly summary with AI;
+- automatic résumé × job-description comparison;
 - embeddings / pgvector;
-- exportação PDF;
-- integração automática com GitHub;
-- app mobile nativo;
-- multiusuário para times;
-- compartilhamento público de perfil;
-- notificações push;
-- gamificação complexa;
-- marketplace, comunidade ou rede social.
+- PDF export;
+- automatic GitHub integration;
+- native mobile app;
+- multi-user for teams;
+- public profile sharing;
+- push notifications;
+- complex gamification;
+- marketplace, community or social network.
 
-Esses itens são `Future`.
+These items are `Future`.
 
 ---
 
-## 4. Stack oficial
+## 4. Official stack
 
-Não adicione bibliotecas fora desta stack sem justificar claramente o trade-off.
+Don't add libraries outside this stack without clearly justifying the trade-off.
 
-| Camada      | Tecnologia                                                         |
-| ----------- | ------------------------------------------------------------------ |
-| Monorepo    | pnpm workspaces                                                    |
-| Frontend    | Next.js App Router                                                 |
-| Backend/BFF | NestJS                                                             |
-| Linguagem   | TypeScript strict                                                  |
-| Banco       | PostgreSQL                                                         |
-| ORM         | Drizzle ORM + drizzle-kit                                          |
-| Auth        | Auth.js no Next.js + JWT validado no NestJS                        |
-| UI          | Tailwind CSS + componentes próprios em `packages/ui`               |
-| Validação   | Zod em `packages/types` quando fizer sentido compartilhar contrato |
-| Testes      | Vitest / Testing Library / Playwright, conforme setup disponível   |
-| Infra local | Docker Compose                                                     |
-| CI          | GitHub Actions                                                     |
+| Layer       | Technology                                                        |
+| ----------- | ----------------------------------------------------------------- |
+| Monorepo    | pnpm workspaces                                                   |
+| Frontend    | Next.js App Router                                                |
+| Backend/BFF | NestJS                                                            |
+| Language    | TypeScript strict                                                 |
+| Database    | PostgreSQL                                                        |
+| ORM         | Drizzle ORM + drizzle-kit                                         |
+| Auth        | Auth.js in Next.js + JWT validated in NestJS                      |
+| UI          | Tailwind CSS + own components in `packages/ui`                    |
+| Validation  | Zod in `packages/types` when it makes sense to share the contract |
+| Tests       | Vitest / Testing Library / Playwright, per the available setup    |
+| Local infra | Docker Compose                                                    |
+| CI          | GitHub Actions                                                    |
 
-Antes de instalar qualquer pacote novo, responder:
+Before installing any new package, answer:
 
 ```md
-## Por que preciso deste pacote?
+## Why do I need this package?
 
-- Problema que resolve:
-- Alternativas consideradas:
-- Por que não dá para fazer com o que já existe:
-- Impacto no bundle/manutenção:
+- Problem it solves:
+- Alternatives considered:
+- Why it can't be done with what already exists:
+- Impact on bundle/maintenance:
 ```
 
-Se não houver justificativa, não instale.
+If there's no justification, don't install it.
 
 ---
 
-## 5. Estrutura de pastas esperada
+## 5. Expected folder structure
 
-A estrutura alvo do monorepo é:
+The monorepo's target structure is:
 
 ```txt
 .
@@ -154,10 +154,10 @@ A estrutura alvo do monorepo é:
 │   │   ├── src/
 │   │   │   ├── main.ts
 │   │   │   ├── app.module.ts
-│   │   │   ├── config/              # config tipada/env validation
-│   │   │   ├── common/              # pipes, filters, guards, interceptors genéricos
-│   │   │   ├── database/            # providers NestJS para Drizzle / @waypoint/db
-│   │   │   └── modules/             # módulos por domínio
+│   │   │   ├── config/              # typed config / env validation
+│   │   │   ├── common/              # generic pipes, filters, guards, interceptors
+│   │   │   ├── database/            # NestJS providers for Drizzle / @waypoint/db
+│   │   │   └── modules/             # modules per domain
 │   │   │       ├── auth/
 │   │   │       ├── users/
 │   │   │       ├── entries/
@@ -178,8 +178,8 @@ A estrutura alvo do monorepo é:
 │   └── web/                         # Next.js App Router
 │       ├── src/
 │       │   ├── app/
-│       │   │   ├── (auth)/           # login, cadastro, callback
-│       │   │   ├── (app)/            # rotas autenticadas
+│       │   │   ├── (auth)/           # login, sign up, callback
+│       │   │   ├── (app)/            # authenticated routes
 │       │   │   │   ├── dashboard/
 │       │   │   │   ├── hoje/
 │       │   │   │   ├── registros/
@@ -193,14 +193,14 @@ A estrutura alvo do monorepo é:
 │       │   │   │   ├── skills/
 │       │   │   │   ├── entrevistas/
 │       │   │   │   └── review-semanal/
-│       │   │   ├── api/              # apenas Auth.js ou endpoints muito específicos do Next
+│       │   │   ├── api/              # only Auth.js or very Next-specific endpoints
 │       │   │   ├── layout.tsx
 │       │   │   └── globals.css
-│       │   ├── components/           # componentes sem domínio forte, só do app web
+│       │   ├── components/           # components without strong domain, web app only
 │       │   │   ├── layout/           # AppShell, Sidebar, Topbar
 │       │   │   ├── feedback/         # EmptyState, ErrorState, LoadingState
 │       │   │   └── data-display/     # MetricCard, SectionHeader, Timeline
-│       │   ├── features/             # features por domínio
+│       │   ├── features/             # features per domain
 │       │   │   ├── dashboard/
 │       │   │   ├── entries/
 │       │   │   ├── professional-moments/
@@ -215,25 +215,25 @@ A estrutura alvo do monorepo é:
 │       │   │   ├── interviews/
 │       │   │   ├── weekly-review/
 │       │   │   └── energy/
-│       │   ├── hooks/                # hooks reutilizáveis realmente globais
-│       │   ├── lib/                  # api client, auth helpers, formatters puros
-│       │   └── styles/               # tokens/css vars se não estiverem em globals
+│       │   ├── hooks/                # genuinely global reusable hooks
+│       │   ├── lib/                  # api client, auth helpers, pure formatters
+│       │   └── styles/               # tokens/css vars if not in globals
 │       └── package.json
 │
 ├── packages/
-│   ├── db/                           # Drizzle schema, client, migrations e seed
+│   ├── db/                           # Drizzle schema, client, migrations and seed
 │   │   ├── src/
-│   │   │   ├── client.ts             # criação do client Drizzle
-│   │   │   ├── index.ts              # exports públicos do pacote
+│   │   │   ├── client.ts             # Drizzle client creation
+│   │   │   ├── index.ts              # package public exports
 │   │   │   └── schema/
 │   │   │       ├── users.ts
 │   │   │       └── index.ts
-│   │   ├── drizzle/                  # migrations geradas pelo drizzle-kit
+│   │   ├── drizzle/                  # migrations generated by drizzle-kit
 │   │   ├── seed.ts
 │   │   ├── drizzle.config.ts
 │   │   └── package.json
 │   │
-│   ├── types/                        # tipos, enums, Zod schemas e contratos compartilhados
+│   ├── types/                        # shared types, enums, Zod schemas and contracts
 │   │   └── src/
 │   │       ├── entries/
 │   │       ├── professional-moments/
@@ -241,7 +241,7 @@ A estrutura alvo do monorepo é:
 │   │       ├── interviews/
 │   │       └── shared/
 │   │
-│   └── ui/                           # design system reutilizável
+│   └── ui/                           # reusable design system
 │       └── src/
 │           ├── tokens/
 │           ├── components/
@@ -265,7 +265,7 @@ A estrutura alvo do monorepo é:
 │   ├── architecture.md
 │   └── product-map.md
 │
-├── scripts/                          # scripts idempotentes do projeto
+├── scripts/                          # idempotent project scripts
 ├── .github/workflows/                # CI
 ├── docker-compose.yml
 ├── pnpm-workspace.yaml
@@ -275,20 +275,20 @@ A estrutura alvo do monorepo é:
 └── AGENTS.md
 ```
 
-### Regra de ouro de pastas
+### Golden rule for folders
 
-Se algo tem domínio de produto, coloque dentro da feature/domínio correspondente.  
-Se algo é primitivo visual genérico, coloque em `packages/ui`.  
-Se algo é contrato compartilhado, coloque em `packages/types`.  
-Se algo é regra de backend, coloque em `apps/api/src/modules/<domain>`.
+If something has product domain, put it inside the corresponding feature/domain.  
+If something is a generic visual primitive, put it in `packages/ui`.  
+If something is a shared contract, put it in `packages/types`.  
+If something is a backend rule, put it in `apps/api/src/modules/<domain>`.
 
 ---
 
-## 6. O que vai em cada pasta
+## 6. What goes in each folder
 
 ### `apps/api/src/modules/<domain>`
 
-Cada domínio do NestJS deve seguir, sempre que fizer sentido:
+Each NestJS domain should follow, whenever it makes sense:
 
 ```txt
 modules/<domain>/
@@ -298,44 +298,44 @@ modules/<domain>/
 ├── <domain>.repository.ts
 ├── dto/
 ├── mappers/
-├── entities/             # se necessário para tipos internos do domínio
+├── entities/             # if needed for internal domain types
 └── tests/
 ```
 
-Regras:
+Rules:
 
-- controller é fino;
-- service contém regra de negócio;
-- repository contém acesso ao Drizzle por meio do pacote `@waypoint/db`;
-- DTO valida entrada/saída;
-- mapper converte banco → resposta;
-- módulo não deve acessar diretamente repository de outro domínio sem service público ou caso de uso claro.
+- the controller is thin;
+- the service holds business logic;
+- the repository holds Drizzle access through the `@waypoint/db` package;
+- the DTO validates input/output;
+- the mapper converts database → response;
+- a module should not directly access another domain's repository without a public service or a clear use case.
 
 ### `apps/web/src/features/<domain>`
 
-Cada feature do web deve seguir:
+Each web feature should follow:
 
 ```txt
 features/<domain>/
 ├── components/
 ├── hooks/
-├── services/             # chamadas ao api client ou server actions finas
-├── types/                # tipos locais da UI, não contratos globais
-├── utils/                # util específico da feature
+├── services/             # calls to the api client or thin server actions
+├── types/                # local UI types, not global contracts
+├── utils/                # feature-specific util
 └── constants.ts
 ```
 
-Regras:
+Rules:
 
-- componente de feature pode conhecer o domínio;
-- componente de feature não deve ser exportado como UI genérica sem motivo;
-- hooks de query/mutation ficam na feature;
-- transformação pesada de dados não deve ficar no JSX;
-- não criar `features/shared` como lixeira.
+- a feature component can know the domain;
+- a feature component should not be exported as generic UI without reason;
+- query/mutation hooks live in the feature;
+- heavy data transformation should not live in the JSX;
+- don't create `features/shared` as a junk drawer.
 
 ### `packages/ui`
 
-Use para componentes sem regra de negócio:
+Use it for components with no business logic:
 
 - `Button`
 - `Input`
@@ -348,432 +348,432 @@ Use para componentes sem regra de negócio:
 - `Dropdown`
 - `Tabs`
 - `Skeleton`
-- `Toast` base, se existir
+- `Toast` base, if it exists
 
-Não coloque em `packages/ui`:
+Don't put in `packages/ui`:
 
 - `AchievementCard`;
 - `QuickCapture`;
 - `ProfessionalMomentCard`;
 - `StudyProgressCard`;
 - `InterviewKanban`;
-- qualquer componente que fale de Waypoint diretamente.
+- any component that speaks of Waypoint directly.
 
-Esses ficam em `apps/web/src/features/...`.
+Those live in `apps/web/src/features/...`.
 
 ### `packages/types`
 
-Use para contratos compartilhados:
+Use it for shared contracts:
 
-- enums de domínio;
-- Zod schemas de entrada/saída;
-- DTOs compartilhados;
-- tipos de API quando usados por web e api.
+- domain enums;
+- input/output Zod schemas;
+- shared DTOs;
+- API types when used by both web and api.
 
-Não coloque lógica de banco, React, NestJS ou Drizzle aqui.
+Don't put database, React, NestJS or Drizzle logic here.
 
 ### `packages/db`
 
-Use para:
+Use it for:
 
-- schema Drizzle separado por domínio;
-- client Drizzle e helpers mínimos de conexão;
-- migrations geradas pelo `drizzle-kit`;
-- seed local;
-- scripts de reset/dev quando fizer sentido.
+- Drizzle schema split by domain;
+- Drizzle client and minimal connection helpers;
+- migrations generated by `drizzle-kit`;
+- local seed;
+- reset/dev scripts when it makes sense.
 
-Regras:
+Rules:
 
-- schema fica em `packages/db/src/schema/`;
-- migrations ficam em `packages/db/drizzle/`;
-- `drizzle.config.ts` fica em `packages/db/`;
-- não coloque regra de negócio neste pacote;
-- não importe NestJS ou React em `packages/db`;
-- nunca edite migrations antigas manualmente depois de aplicadas. Crie nova migration.
+- the schema lives in `packages/db/src/schema/`;
+- migrations live in `packages/db/drizzle/`;
+- `drizzle.config.ts` lives in `packages/db/`;
+- don't put business logic in this package;
+- don't import NestJS or React in `packages/db`;
+- never manually edit old migrations after they've been applied. Create a new migration.
 
 ### `docs/adr`
 
-Use para decisões arquiteturais. ADR não é decoração. Se uma decisão muda, atualize a ADR.
+Use it for architectural decisions. An ADR is not decoration. If a decision changes, update the ADR.
 
 ---
 
-## 7. Regras de “não fazer de jeito nenhum”
+## 7. "Never do this under any circumstances" rules
 
-Estas regras são obrigatórias.
+These rules are mandatory.
 
-### Produto e escopo
+### Product and scope
 
-- Não transformar o Waypoint em todo list genérico.
-- Não implementar IA na v1 sem issue explícita e ADR.
-- Não criar feature avançada antes da fundação e Entry core estarem estáveis.
-- Não criar telas só com dados mockados e considerar pronto.
-- Não criar dashboard cheio de métricas sem ação clara.
-- Não adicionar gamificação, ranking, rede social ou compartilhamento público na v1.
-- Não misturar saúde clínica/terapia com energia profissional. O termômetro é apenas profissional e leve.
+- Don't turn Waypoint into a generic to-do list.
+- Don't implement AI in v1 without an explicit issue and ADR.
+- Don't build an advanced feature before the foundation and Entry core are stable.
+- Don't create screens with only mocked data and call them done.
+- Don't create a dashboard full of metrics with no clear action.
+- Don't add gamification, ranking, social network or public sharing in v1.
+- Don't mix clinical/therapy health with professional energy. The thermometer is purely professional and light.
 
-### Arquitetura
+### Architecture
 
-- Não criar lógica de negócio dentro de componente React.
-- Não criar lógica de negócio dentro de controller NestJS.
-- Não acessar Drizzle diretamente pelo frontend.
-- Não duplicar regra de negócio no Next e no Nest.
-- Não criar `utils.ts` gigante.
-- Não criar store global monolítica para tudo.
-- Não salvar dados de servidor em Zustand/localStorage como fonte de verdade.
-- Não criar tipos duplicados quando eles podem vir de `packages/types` ou dos schemas inferidos do Drizzle.
-- Não criar abstração com apenas um uso real.
-- Não refatorar arquitetura inteira durante uma issue pequena.
+- Don't put business logic inside a React component.
+- Don't put business logic inside a NestJS controller.
+- Don't access Drizzle directly from the frontend.
+- Don't duplicate business logic across Next and Nest.
+- Don't create a giant `utils.ts`.
+- Don't create one monolithic global store for everything.
+- Don't store server data in Zustand/localStorage as the source of truth.
+- Don't create duplicate types when they can come from `packages/types` or from the Drizzle-inferred schemas.
+- Don't create an abstraction with only one real usage.
+- Don't refactor the whole architecture during a small issue.
 
-### Segurança e dados
+### Security and data
 
-- Não confiar em `userId` vindo do client.
-- Não retornar dados de outra usuária.
-- Não logar token, senha, JWT, cookies, e-mail completo ou dados pessoais sensíveis.
-- Não salvar token em localStorage.
-- Não commitar `.env`, secrets, chaves ou credenciais.
-- Não expor stack trace em response de produção.
-- Não ignorar autorização em rotas de update/delete.
+- Don't trust `userId` coming from the client.
+- Don't return another user's data.
+- Don't log tokens, passwords, JWTs, cookies, full email addresses or sensitive personal data.
+- Don't store tokens in localStorage.
+- Don't commit `.env`, secrets, keys or credentials.
+- Don't expose stack traces in production responses.
+- Don't skip authorization on update/delete routes.
 
-### Banco
+### Database
 
-- Não editar migration aplicada manualmente.
-- Não criar tabela de domínio sem `userId`, salvo tabela global justificada.
-- Não fazer hard delete por padrão em dados de domínio, salvo fluxo explícito.
-- Não usar JSONB como atalho para evitar modelagem sem ADR.
-- Não remover campos/tabelas sem migration e sem ajustar consumers.
+- Don't manually edit an applied migration.
+- Don't create a domain table without `userId`, except for a justified global table.
+- Don't hard delete domain data by default, except in an explicit flow.
+- Don't use JSONB as a shortcut to avoid modeling without an ADR.
+- Don't remove fields/tables without a migration and without adjusting consumers.
 
 ### Frontend
 
-- Não usar `any` para calar TypeScript.
-- Não usar `// @ts-ignore` sem explicação e issue de follow-up.
-- Não criar Client Component se Server Component resolve.
-- Não remover focus outline sem substituir por focus visível.
-- Não deixar tela sem empty/loading/error quando busca dados.
-- Não usar texto hardcoded em inglês na UI, exceto termos técnicos inevitáveis.
-- Não usar cores arbitrárias sem token quando o token existe.
-- Não usar componente de design system para regra de domínio.
+- Don't use `any` to silence TypeScript.
+- Don't use `// @ts-ignore` without an explanation and a follow-up issue.
+- Don't create a Client Component when a Server Component solves it.
+- Don't remove the focus outline without replacing it with a visible focus.
+- Don't leave a screen without empty/loading/error when it fetches data.
+- Don't use hardcoded English text in the UI, except for unavoidable technical terms.
+- Don't use arbitrary colors without a token when the token exists.
+- Don't use a design system component for domain logic.
 
-### Testes e qualidade
+### Tests and quality
 
-- Não remover teste para passar build sem explicar.
-- Não pular lint/typecheck se o comando existe.
-- Não deixar `console.log` solto.
-- Não engolir erro com `catch {}` vazio.
-- Não finalizar issue dizendo que está pronto se não rodou validação ou não explicou por que não rodou.
+- Don't remove a test to make the build pass without explaining.
+- Don't skip lint/typecheck if the command exists.
+- Don't leave stray `console.log`.
+- Don't swallow errors with an empty `catch {}`.
+- Don't finish an issue saying it's done if you didn't run the checks or explain why not.
 
 ---
 
-## 8. Domínios do produto
+## 8. Product domains
 
-### 8.1 Auth e usuário
+### 8.1 Auth and user
 
-Responsável por:
+Responsible for:
 
-- login/cadastro;
-- sessão persistente;
-- perfil;
+- login/sign up;
+- persistent session;
+- profile;
 - timezone;
-- preferências de tema;
-- status profissional editável.
+- theme preferences;
+- editable professional status.
 
-Regras:
+Rules:
 
-- `userId` sempre vem da sessão.
-- APIs protegidas exigem autenticação.
-- Não retornar hash de senha.
+- `userId` always comes from the session.
+- Protected APIs require authentication.
+- Don't return the password hash.
 
 ### 8.2 Entry core
 
-`Entry` é o core do produto.
+`Entry` is the product's core.
 
-Tipos previstos:
+Planned types:
 
-- `learning` — aprendizado;
-- `achievement` — conquista;
-- `question` — dúvida;
-- `task` — tarefa;
-- `link` — link útil;
-- `study_log` — registro de estudo;
-- `decision` — decisão técnica;
-- `feedback` — feedback recebido.
+- `learning` — a learning;
+- `achievement` — an achievement;
+- `question` — a question;
+- `task` — a task;
+- `link` — a useful link;
+- `study_log` — a study record;
+- `decision` — a technical decision;
+- `feedback` — feedback received.
 
-Modelo sugerido:
+Suggested model:
 
-- tabela base `entries`;
-- tabelas específicas por subtipo;
-- relação 1:1 entre `entries` e subtipo;
-- tags por relação N:N;
-- vínculo opcional com momento profissional, projeto, entrevista ou estudo.
+- a base `entries` table;
+- specific tables per subtype;
+- a 1:1 relation between `entries` and the subtype;
+- tags via an N:N relation;
+- an optional link to a professional moment, project, interview or study.
 
-Não trocar para JSONB sem ADR.
+Don't switch to JSONB without an ADR.
 
-### 8.3 Momento profissional
+### 8.3 Professional moment
 
-`ProfessionalMoment` é contexto, não Entry.
+`ProfessionalMoment` is context, not an Entry.
 
-Campos esperados:
+Expected fields:
 
-- empresa;
-- projeto;
-- papel;
-- fase: onboarding, ramp-up, cruzeiro, transição;
-- objetivo da semana;
-- principal desafio;
-- próxima ação recomendada;
-- data início;
-- data fim.
+- company;
+- project;
+- role;
+- phase: onboarding, ramp-up, cruising, transition;
+- goal of the week;
+- main challenge;
+- recommended next action;
+- start date;
+- end date.
 
-Regras:
+Rules:
 
-- apenas um momento ativo por usuária;
-- momento ativo tem `endedAt = null`;
-- ao criar novo momento ativo, encerrar anterior ou impedir criação;
-- entries podem se vincular ao momento ativo.
+- only one active moment per user;
+- the active moment has `endedAt = null`;
+- when creating a new active moment, close the previous one or prevent creation;
+- entries can be linked to the active moment.
 
-### 8.4 Hoje
+### 8.4 Today
 
-Responsável por tarefas profissionais do dia.
+Responsible for the day's professional tasks.
 
-Regras:
+Rules:
 
-- listar tarefas com `dueDate` hoje;
-- permitir concluir/desconcluir;
-- prioridade discreta;
-- categoria clara;
-- não virar uma lista infinita sem foco.
+- list tasks with `dueDate` of today;
+- allow complete/uncomplete;
+- discrete priority;
+- clear category;
+- don't become an infinite, unfocused list.
 
 ### 8.5 Work Log
 
-Timeline consultável de:
+A browsable timeline of:
 
-- aprendizados;
-- decisões técnicas;
-- estudos;
-- problemas resolvidos;
-- registros relevantes do dia.
+- learnings;
+- technical decisions;
+- studies;
+- solved problems;
+- relevant records of the day.
 
-Agrupar por data. Deve ser fácil responder: “o que eu fiz/aprendi essa semana?”.
+Group by date. It should make it easy to answer: "what did I do/learn this week?".
 
-### 8.6 Estudos
+### 8.6 Studies
 
-Entidades:
+Entities:
 
 - `StudyTrail`;
 - `StudyResource`;
 - `StudyProgress`;
 - `StudyLog`.
 
-Regras:
+Rules:
 
-- recurso pode ser curso, vídeo, livro, artigo, documentação ou exercício;
-- progresso pode ser manual;
-- timer é opcional;
-- estudos de hoje devem priorizar recursos em andamento.
+- a resource can be a course, video, book, article, documentation or exercise;
+- progress can be manual;
+- a timer is optional;
+- today's studies should prioritize in-progress resources.
 
-### 8.7 Dúvidas
+### 8.7 Questions
 
-Dúvida é subtipo de Entry, mas tem tela própria.
+A question is an Entry subtype, but it has its own screen.
 
-Status:
+Statuses:
 
 - `open` / Aberta;
 - `needs_validation` / Precisa validar;
 - `answered` / Respondida.
 
-Ao responder uma dúvida, pode criar aprendizado vinculado.
+When answering a question, it may create a linked learning.
 
-### 8.8 Conquistas / Brag Document
+### 8.8 Achievements / Brag Document
 
-Conquista é subtipo central.
+An achievement is a central subtype.
 
-Campos importantes:
+Important fields:
 
-- título;
-- contexto;
-- ação;
-- resultado;
-- tipo: onboarding, técnica, processo, liderança, comunicação;
-- impacto: autonomia, clareza, performance, documentação, produtividade, qualidade;
-- tecnologias;
-- momento vinculado;
-- flags: usar em entrevista, currículo, LinkedIn.
+- title;
+- context;
+- action;
+- result;
+- type: onboarding, technical, process, leadership, communication;
+- impact: autonomy, clarity, performance, documentation, productivity, quality;
+- technologies;
+- linked moment;
+- flags: use in interview, résumé, LinkedIn.
 
-Não modelar conquista como simples nota. Ela precisa virar evidência profissional.
+Don't model an achievement as a simple note. It needs to become professional evidence.
 
-### 8.9 Links úteis
+### 8.9 Useful links
 
-Campos:
+Fields:
 
 - URL;
-- título;
-- categoria;
+- title;
+- category;
 - tags;
-- revisado/a revisar;
-- vínculo opcional com trilha, projeto ou momento.
+- reviewed/to review;
+- optional link to a trail, project or moment.
 
-### 8.10 Projetos
+### 8.10 Projects
 
-Campos:
+Fields:
 
-- nome;
-- descrição;
+- name;
+- description;
 - stack;
-- status: ativo, pausado, arquivado;
-- entries vinculadas;
-- decisões técnicas vinculadas.
+- status: active, paused, archived;
+- linked entries;
+- linked technical decisions.
 
 ### 8.11 Skills
 
-Campos:
+Fields:
 
-- nome;
-- categoria;
-- nível atual 1–5;
-- nível objetivo 1–5;
-- notas;
-- histórico de evolução.
+- name;
+- category;
+- current level 1–5;
+- target level 1–5;
+- notes;
+- evolution history.
 
-Não usar skill como métrica para gerar culpa. A UX deve mostrar evolução.
+Don't use skills as a metric to generate guilt. The UX should show evolution.
 
-### 8.12 Entrevistas
+### 8.12 Interviews
 
-Entidades:
+Entities:
 
-- processo;
-- etapa;
+- process;
+- stage;
 - feedback;
-- versão de currículo;
-- requisitos da vaga.
+- résumé version;
+- job requirements.
 
-Regras:
+Rules:
 
-- feedback pode virar aprendizado;
-- requisito pode ser `atendo`, `parcial`, `não atendo`;
-- processo tem status claro.
+- feedback can become a learning;
+- a requirement can be `meets`, `partial`, `doesn't meet`;
+- a process has a clear status.
 
-### 8.13 Review semanal
+### 8.13 Weekly review
 
-Uma review por semana.
+One review per week.
 
-Deve consolidar:
+It should consolidate:
 
-- o que aconteceu;
-- o que aprendi;
-- o que ficou pendente;
-- principais conquistas;
-- foco da próxima semana;
-- contadores automáticos de entries por tipo.
+- what happened;
+- what I learned;
+- what's still pending;
+- main achievements;
+- focus for next week;
+- automatic counters of entries by type.
 
-### 8.14 Foco da semana
+### 8.14 Weekly focus
 
-Widget do dashboard com:
+A dashboard widget with:
 
-- título;
-- descrição;
+- title;
+- description;
 - checklist.
 
-Ao final da semana, pode ser consolidado na review.
+At the end of the week, it can be consolidated into the review.
 
-### 8.15 Energia profissional
+### 8.15 Professional energy
 
-Termômetro profissional, não clínico.
+A professional thermometer, not a clinical one.
 
-Níveis:
+Levels:
 
-- confiante;
-- neutra;
-- perdida;
-- sobrecarregada.
+- confident;
+- neutral;
+- lost;
+- overwhelmed.
 
-Permite nota curta, exemplo: “Perdida, mas avançando”.
+It allows a short note, for example: "Lost, but making progress".
 
-### 8.16 Busca, tags e filtros
+### 8.16 Search, tags and filters
 
-Deve permitir encontrar qualquer coisa em segundos.
+It should let you find anything in seconds.
 
-- tags globais;
-- filtros por tipo/status/data;
-- busca full-text em Entries, Momentos e Processos;
-- Cmd+K opcional.
+- global tags;
+- filters by type/status/date;
+- full-text search across Entries, Moments and Processes;
+- optional Cmd+K.
 
 ---
 
-## 9. Roadmap por sprint
+## 9. Roadmap per sprint
 
-### Sprint 0 — Fundação
+### Sprint 0 — Foundation
 
-Foco: infraestrutura, sem feature profunda de produto.
+Focus: infrastructure, no deep product feature.
 
-Entregável: app roda local, login funciona, sidebar aparece, tema alterna.
+Deliverable: the app runs locally, login works, the sidebar appears, the theme toggles.
 
 Issues:
 
-- monorepo com pnpm workspaces;
-- Docker Compose com Postgres 16, API e Web;
-- setup base do NestJS;
-- setup base do Next.js com App Router, Tailwind e tema;
-- Drizzle schema base com tabela `users`;
-- Auth.js no Next + JWT guard no NestJS;
-- CI com lint, typecheck e test;
-- design system mínimo em `packages/ui`;
-- dashboard shell com sidebar;
+- monorepo with pnpm workspaces;
+- Docker Compose with Postgres 16, API and Web;
+- NestJS base setup;
+- Next.js base setup with App Router, Tailwind and theme;
+- base Drizzle schema with the `users` table;
+- Auth.js in Next + JWT guard in NestJS;
+- CI with lint, typecheck and test;
+- minimal design system in `packages/ui`;
+- dashboard shell with sidebar;
 - ADR-001, ADR-002, ADR-003, ADR-004.
 
-### Sprint 1 — Registro / Entry core
+### Sprint 1 — Quick capture / Entry core
 
-Entregável: registrar aprendizado, dúvida, tarefa ou link pelo dashboard e visualizar na listagem.
+Deliverable: record a learning, question, task or link from the dashboard and view it in the listing.
 
-### Sprint 2 — Hoje + Work Log
+### Sprint 2 — Today + Work Log
 
-Entregável: dashboard mostra tarefas do dia e work log vira diário profissional.
+Deliverable: the dashboard shows the day's tasks and the work log becomes a professional diary.
 
-### Sprint 3 — Momento Atual
+### Sprint 3 — Current moment
 
-Entregável: dashboard mostra contexto profissional real e editável.
+Deliverable: the dashboard shows real, editable professional context.
 
-### Sprint 4 — Estudos
+### Sprint 4 — Studies
 
-Entregável: trilhas, recursos, progresso e estudos do dia.
+Deliverable: trails, resources, progress and today's studies.
 
-### Sprint 5 — Dúvidas
+### Sprint 5 — Questions
 
-Entregável: dúvidas abertas com status e vínculo ao momento atual.
+Deliverable: open questions with status and a link to the current moment.
 
-### Sprint 6 — Conquistas + Links
+### Sprint 6 — Achievements + Links
 
-Entregável: brag document inicial e links organizados.
+Deliverable: an initial brag document and organized links.
 
-### Sprint 7 — Projetos + Skills
+### Sprint 7 — Projects + Skills
 
-Entregável: projetos, skills e evolução técnica.
+Deliverable: projects, skills and technical evolution.
 
-### Sprint 8 — Entrevistas parte 1
+### Sprint 8 — Interviews part 1
 
-Entregável: processos seletivos e etapas.
+Deliverable: hiring processes and stages.
 
-### Sprint 9 — Entrevistas parte 2
+### Sprint 9 — Interviews part 2
 
-Entregável: currículos, requisitos da vaga e vínculo processo × currículo.
+Deliverable: résumés, job requirements and the process × résumé link.
 
-### Sprint 10 — Review semanal + Foco + Energia
+### Sprint 10 — Weekly review + Focus + Energy
 
-Entregável: ritual semanal de revisão profissional.
+Deliverable: a weekly professional review ritual.
 
-### Sprint 11 — Busca, tags e filtros
+### Sprint 11 — Search, tags and filters
 
-Entregável: encontrar qualquer informação rapidamente.
+Deliverable: find any information quickly.
 
-### Sprint 12 — Polimento
+### Sprint 12 — Polish
 
-Entregável: v1 em produção com empty states, toasts, tour inicial, README e deploy.
+Deliverable: v1 in production with empty states, toasts, an onboarding tour, README and deploy.
 
 ---
 
-## 10. ADRs obrigatórias
+## 10. Mandatory ADRs
 
-Escreva ou atualize ADRs em `docs/adr`.
+Write or update ADRs in `docs/adr`.
 
-ADRs da Sprint 0:
+Sprint 0 ADRs:
 
 - `ADR-001-entry-model.md`
 - `ADR-002-orm.md`
@@ -783,33 +783,33 @@ ADRs da Sprint 0:
 Template:
 
 ```md
-# ADR-000 — Título
+# ADR-000 — Title
 
 ## Status
 
-Proposta | Aceita | Substituída
+Proposed | Accepted | Superseded
 
-## Contexto
+## Context
 
-Explique o problema e as forças envolvidas.
+Explain the problem and the forces involved.
 
-## Opções consideradas
+## Options considered
 
-- Opção A
-- Opção B
+- Option A
+- Option B
 
-## Decisão
+## Decision
 
-Explique a escolha.
+Explain the choice.
 
-## Consequências
+## Consequences
 
-- Positivas
-- Negativas
+- Positive
+- Negative
 - Trade-offs
 ```
 
-Não implemente solução contrária à ADR aceita sem atualizar a ADR.
+Don't implement a solution that contradicts an accepted ADR without updating the ADR.
 
 ---
 
@@ -817,46 +817,46 @@ Não implemente solução contrária à ADR aceita sem atualizar a ADR.
 
 ### Controllers
 
-Controllers devem:
+Controllers should:
 
-- validar sessão/autorização;
-- receber parâmetros;
-- validar input;
-- chamar service;
-- retornar resposta.
+- validate session/authorization;
+- receive parameters;
+- validate input;
+- call the service;
+- return the response.
 
-Controllers não devem:
+Controllers should not:
 
-- conter regra de negócio;
-- montar query Drizzle complexa;
-- decidir lógica de domínio;
-- fazer transformação pesada.
+- contain business logic;
+- assemble complex Drizzle queries;
+- decide domain logic;
+- do heavy transformation.
 
 ### Services
 
-Services devem:
+Services should:
 
-- concentrar regra de negócio;
-- orquestrar repositories;
-- aplicar regras de autorização quando ligadas ao domínio;
-- ser testáveis.
+- concentrate business logic;
+- orchestrate repositories;
+- apply authorization rules when tied to the domain;
+- be testable.
 
 ### Repositories
 
-Repositories devem:
+Repositories should:
 
-- ser a única camada de domínio que fala diretamente com Drizzle;
-- sempre filtrar por `userId` em dados de domínio;
-- não retornar dados sensíveis desnecessários;
-- não conter regra complexa de produto.
+- be the only domain layer that talks directly to Drizzle;
+- always filter by `userId` on domain data;
+- not return unnecessary sensitive data;
+- not contain complex product rules.
 
-### DTOs e validação
+### DTOs and validation
 
-- Valide input no backend sempre.
-- Se schema for compartilhado com frontend, use `packages/types`.
-- Rejeite input inválido com erro estruturado.
+- Always validate input on the backend.
+- If the schema is shared with the frontend, use `packages/types`.
+- Reject invalid input with a structured error.
 
-Envelope sugerido:
+Suggested envelope:
 
 ```ts
 {
@@ -864,7 +864,7 @@ Envelope sugerido:
 }
 ```
 
-Erro sugerido:
+Suggested error:
 
 ```ts
 {
@@ -876,19 +876,19 @@ Erro sugerido:
 }
 ```
 
-### Status HTTP
+### HTTP status
 
-- `200` leitura/atualização OK;
-- `201` criação OK;
-- `204` delete sem body;
-- `400` request malformada;
-- `401` não autenticado;
-- `403` sem permissão;
-- `404` recurso não encontrado;
-- `422` validação de input;
-- `500` erro inesperado sem detalhes sensíveis.
+- `200` read/update OK;
+- `201` creation OK;
+- `204` delete with no body;
+- `400` malformed request;
+- `401` not authenticated;
+- `403` no permission;
+- `404` resource not found;
+- `422` input validation;
+- `500` unexpected error with no sensitive details.
 
-### Rotas REST esperadas
+### Expected REST routes
 
 ```txt
 GET    /entries
@@ -918,104 +918,104 @@ GET    /weekly-reviews/current
 
 ## 12. Frontend guidelines — Next.js
 
-### Server Components por padrão
+### Server Components by default
 
-Use Server Components quando:
+Use Server Components when:
 
-- a tela apenas carrega dados;
-- não há estado local interativo;
-- não usa browser API;
-- não usa eventos do usuário.
+- the screen only loads data;
+- there's no local interactive state;
+- it doesn't use browser APIs;
+- it doesn't use user events.
 
-Use Client Components quando:
+Use Client Components when:
 
-- há formulário interativo;
-- há filtros client-side;
-- há modal/dropdown controlado;
-- há drag and drop;
-- há estado local;
-- há React Query ou mutation.
+- there's an interactive form;
+- there are client-side filters;
+- there's a controlled modal/dropdown;
+- there's drag and drop;
+- there's local state;
+- there's React Query or a mutation.
 
-Marque `"use client"` no menor componente possível, nunca na página inteira sem necessidade.
+Mark `"use client"` on the smallest possible component, never on the whole page without need.
 
-### Organização de páginas
+### Page organization
 
-Páginas em `app/` devem ser finas. Elas podem:
+Pages in `app/` should be thin. They can:
 
-- montar layout;
-- buscar dados iniciais;
-- chamar componentes de feature;
-- definir metadata.
+- assemble layout;
+- fetch initial data;
+- call feature components;
+- define metadata.
 
-Páginas não devem:
+Pages should not:
 
-- conter JSX gigante;
-- conter regra de domínio;
-- conter transformação complexa;
-- fazer fetch espalhado sem camada.
+- contain giant JSX;
+- contain domain logic;
+- contain complex transformation;
+- fetch in a scattered way without a layer.
 
 ### API client
 
-Centralize chamadas HTTP em:
+Centralize HTTP calls in:
 
 ```txt
 apps/web/src/lib/api/
 ```
 
-ou em services por feature:
+or in services per feature:
 
 ```txt
 features/entries/services/entries-api.ts
 ```
 
-Não espalhe `fetch()` bruto por vários componentes.
+Don't scatter raw `fetch()` across many components.
 
-### Estado
+### State
 
-Use estado local para UI simples.  
-Use query/mutation library se o projeto já tiver uma.  
-Não duplique dados do servidor em store global.
+Use local state for simple UI.  
+Use a query/mutation library if the project already has one.  
+Don't duplicate server data in a global store.
 
-### Formulários
+### Forms
 
-- Validação client-side melhora UX, mas backend é a fonte final.
-- Erros devem aparecer perto do campo.
-- Submit deve ter loading.
-- Não limpar formulário se a request falhar.
+- Client-side validation improves UX, but the backend is the final source.
+- Errors should appear near the field.
+- Submit should have a loading state.
+- Don't clear the form if the request fails.
 
-### Listas e tabelas
+### Lists and tables
 
-- Toda lista com dados remotos precisa de loading, error e empty.
-- Listas grandes devem ter paginação ou virtualização.
-- Filtros importantes devem poder ficar na URL quando fizer sentido.
+- Every list with remote data needs loading, error and empty.
+- Large lists should have pagination or virtualization.
+- Important filters should be able to live in the URL when it makes sense.
 
-### Acessibilidade
+### Accessibility
 
-Obrigatório:
+Mandatory:
 
-- labels em inputs;
-- botões com texto acessível;
-- focus visível;
-- navegação por teclado;
-- contraste adequado;
-- `aria-describedby` para erro de campo;
-- modais com focus trap.
+- labels on inputs;
+- buttons with accessible text;
+- visible focus;
+- keyboard navigation;
+- adequate contrast;
+- `aria-describedby` for field errors;
+- modals with focus trap.
 
 ---
 
-## 13. Design system e UI
+## 13. Design system and UI
 
-O design deve ser:
+The design should be:
 
-- limpo;
-- profissional;
-- calmo;
-- útil;
-- com hierarquia visual clara;
-- com poucos elementos decorativos;
-- com cards funcionais, não cards aleatórios.
+- clean;
+- professional;
+- calm;
+- useful;
+- with clear visual hierarchy;
+- with few decorative elements;
+- with functional cards, not random cards.
 
-Referências visuais:
+Visual references:
 
 - Linear;
 - Raycast;
@@ -1025,24 +1025,23 @@ Referências visuais:
 - Arc Browser;
 - Superhuman.
 
-Paleta base sugerida:
+Suggested base palette:
 
 ```txt
-Background: #F8FAFC ou #FAFAFB
+Background: #F8FAFC or #FAFAFB
 Surface: #FFFFFF
 Text primary: #111827
 Text secondary: #6B7280
 Primary: #7C6FF7
 Primary dark: #5B4FE8
-Border: #E5E7EB
-Success soft: verde suave
-Warning soft: amarelo suave
-Danger: vermelho apenas para alerta real
+Success soft: soft green
+Warning soft: soft yellow
+Danger: red only for real alerts
 ```
 
-### Componentes mínimos da Sprint 0
+### Minimum Sprint 0 components
 
-Em `packages/ui`:
+In `packages/ui`:
 
 - `Button`
 - `Input`
@@ -1052,68 +1051,68 @@ Em `packages/ui`:
 - `Chip`
 - `Checkbox`
 - `Skeleton`
-- tokens de cor;
-- tokens de spacing;
-- tokens de radius;
-- tema light/dark com CSS variables.
+- color tokens;
+- spacing tokens;
+- radius tokens;
+- light/dark theme with CSS variables.
 
-### Regras de UI
+### UI rules
 
-- Não criar dashboard poluído.
-- Não usar mais de uma cor chamativa por seção.
-- Não criar componente visual sem função real.
-- Não usar emoji como estrutura de interface.
-- Não esconder ação principal.
-- Não deixar a usuária sem próximo passo claro.
+- Don't create a cluttered dashboard.
+- Don't use more than one attention-grabbing color per section.
+- Don't create a visual component with no real function.
+- Don't use emoji as interface structure.
+- Don't hide the primary action.
+- Don't leave the user without a clear next step.
 
 ### Microcopy
 
-Use frases como:
+Use phrases like:
 
-- “Nada importante precisa ficar só na sua cabeça.”
-- “Registre agora, organize depois.”
-- “O que você aprendeu hoje?”
-- “Essa conquista pode virar um case de entrevista.”
-- “Você não precisa entender tudo hoje. Só o próximo passo.”
+- "Nada importante precisa ficar só na sua cabeça."
+- "Registre agora, organize depois."
+- "O que você aprendeu hoje?"
+- "Essa conquista pode virar um case de entrevista."
+- "Você não precisa entender tudo hoje. Só o próximo passo."
 
-Evite:
+Avoid:
 
-- tom infantil;
-- frases motivacionais exageradas;
-- linguagem clínica;
-- excesso de emojis;
-- inglês desnecessário na UI.
+- a childish tone;
+- exaggerated motivational phrases;
+- clinical language;
+- too many emojis;
+- unnecessary English in the UI.
 
 ---
 
-## 14. Banco de dados e Drizzle
+## 14. Database and Drizzle
 
-### Convenções
+### Conventions
 
-- Drizzle ORM é a fonte oficial de schema e migrations.
-- Schema fica em `packages/db/src/schema/`, separado por domínio.
-- Migrations geradas ficam em `packages/db/drizzle/`.
-- Use `drizzle.config.ts` em `packages/db/`.
-- Nomes de tabelas e colunas no banco devem usar `snake_case`.
-- Nomes TypeScript devem usar `camelCase`.
-- Use helpers do Drizzle como `pgTable`, `uuid`, `text`, `timestamp`, `boolean`, `integer`, `pgEnum`, `index` e `uniqueIndex`.
-- Toda entidade de domínio deve ter `id`, `userId`, `createdAt`, `updatedAt`.
-- Use `deletedAt` em entidades principais quando fizer sentido preservar histórico.
+- Drizzle ORM is the official source of schema and migrations.
+- The schema lives in `packages/db/src/schema/`, split by domain.
+- Generated migrations live in `packages/db/drizzle/`.
+- Use `drizzle.config.ts` in `packages/db/`.
+- Table and column names in the database should use `snake_case`.
+- TypeScript names should use `camelCase`.
+- Use Drizzle helpers such as `pgTable`, `uuid`, `text`, `timestamp`, `boolean`, `integer`, `pgEnum`, `index` and `uniqueIndex`.
+- Every domain entity should have `id`, `userId`, `createdAt`, `updatedAt`.
+- Use `deletedAt` on main entities when it makes sense to preserve history.
 
-### Regras obrigatórias
+### Mandatory rules
 
-- Toda query de domínio deve filtrar por `userId`.
-- Não aceitar `userId` do client.
-- Não criar tabela de domínio sem FK para usuário, salvo exceção documentada.
-- Não editar migration antiga aplicada manualmente.
-- Não usar JSONB como desculpa para não modelar o domínio.
-- Não remover dados em cascata sem entender impacto.
-- Não espalhar schema Drizzle dentro de `apps/web` ou `apps/api/modules`.
-- Não criar client Drizzle novo em cada repository. Reutilize o client/provider definido na camada de database.
-- Não usar SQL raw quando o query builder do Drizzle resolve de forma clara.
-- SQL raw só é permitido com justificativa, tipagem e cuidado com injection.
+- Every domain query should filter by `userId`.
+- Don't accept `userId` from the client.
+- Don't create a domain table without an FK to the user, except for a documented exception.
+- Don't manually edit an old applied migration.
+- Don't use JSONB as an excuse not to model the domain.
+- Don't cascade-delete data without understanding the impact.
+- Don't scatter the Drizzle schema inside `apps/web` or `apps/api/modules`.
+- Don't create a new Drizzle client in each repository. Reuse the client/provider defined in the database layer.
+- Don't use raw SQL when Drizzle's query builder solves it clearly.
+- Raw SQL is only allowed with justification, typing and care about injection.
 
-### Estrutura recomendada do pacote de banco
+### Recommended database package structure
 
 ```txt
 packages/db/
@@ -1128,24 +1127,24 @@ packages/db/
 │       ├── interviews.ts           # Sprint 8+
 │       └── index.ts
 ├── drizzle/
-│   └── ... migrations geradas
+│   └── ... generated migrations
 ├── seed.ts
 ├── drizzle.config.ts
 └── package.json
 ```
 
-### Schema Drizzle
+### Drizzle schema
 
-Regras para schemas:
+Rules for schemas:
 
-- Cada arquivo deve representar um domínio ou conjunto pequeno de tabelas relacionadas.
-- `users.ts` deve conter a tabela inicial `users` da Sprint 0.
-- `index.ts` deve exportar todas as tabelas e enums.
-- Enums compartilhados devem ser definidos com `pgEnum` quando forem persistidos no banco.
-- Índices devem ser declarados no schema junto da tabela.
-- Constraints importantes devem ser explícitas, não apenas validadas na aplicação.
+- Each file should represent a domain or a small set of related tables.
+- `users.ts` should contain the initial `users` table from Sprint 0.
+- `index.ts` should export all tables and enums.
+- Shared enums should be defined with `pgEnum` when persisted in the database.
+- Indexes should be declared in the schema next to the table.
+- Important constraints should be explicit, not just validated in the application.
 
-Exemplo conceitual:
+Conceptual example:
 
 ```ts
 export const users = pgTable("users", {
@@ -1164,24 +1163,24 @@ export const users = pgTable("users", {
 
 ### Migrations
 
-- Gere migrations com `drizzle-kit generate`.
-- Aplique migrations com `drizzle-kit migrate`.
-- Revise o SQL gerado antes de considerar pronto.
-- Nunca edite uma migration antiga já aplicada. Gere uma nova.
-- Migration quebrada em ambiente local pode ser resetada apenas se não houver dados reais.
-- CI deve validar typecheck e, quando configurado, consistência de migrations.
+- Generate migrations with `drizzle-kit generate`.
+- Apply migrations with `drizzle-kit migrate`.
+- Review the generated SQL before considering it done.
+- Never edit an old, already-applied migration. Generate a new one.
+- A broken migration in the local environment can only be reset if there's no real data.
+- CI should validate typecheck and, when configured, migration consistency.
 
-### Repositories com Drizzle
+### Repositories with Drizzle
 
-Repositories devem:
+Repositories should:
 
-- receber ou importar o client Drizzle por um ponto central;
-- usar os schemas exportados por `@waypoint/db`;
-- sempre filtrar por `userId` em entidades de domínio;
-- retornar apenas os dados necessários;
-- manter query clara e testável.
+- receive or import the Drizzle client through a central point;
+- use the schemas exported by `@waypoint/db`;
+- always filter by `userId` on domain entities;
+- return only the needed data;
+- keep queries clear and testable.
 
-Exemplo conceitual:
+Conceptual example:
 
 ```ts
 await db
@@ -1190,68 +1189,68 @@ await db
   .where(and(eq(entries.id, id), eq(entries.userId, userId)));
 ```
 
-Nunca:
+Never:
 
 ```ts
 await db.select().from(entries).where(eq(entries.id, id));
 ```
 
-### Tipos inferidos
+### Inferred types
 
-- Use `$inferSelect` e `$inferInsert` quando fizer sentido.
-- Tipos de banco não substituem contratos de API quando a resposta pública é diferente.
-- Não exporte detalhes internos de tabela diretamente para componentes React.
-- DTOs de API podem ser definidos em `packages/types` com Zod.
+- Use `$inferSelect` and `$inferInsert` when it makes sense.
+- Database types don't replace API contracts when the public response differs.
+- Don't export internal table details directly to React components.
+- API DTOs can be defined in `packages/types` with Zod.
 
 ### Soft delete
 
-Preferir `deletedAt` para:
+Prefer `deletedAt` for:
 
 - entries;
-- momentos;
-- projetos;
-- processos seletivos;
-- recursos de estudo.
+- moments;
+- projects;
+- hiring processes;
+- study resources.
 
-Hard delete apenas em fluxo explícito de exclusão de conta ou reset local.
+Hard delete only in an explicit account-deletion or local-reset flow.
 
 ### Seeds
 
-Seeds devem usar dados fictícios e realistas.  
-Não colocar dados pessoais reais da usuária em seed público.
+Seeds should use fictional, realistic data.  
+Don't put the user's real personal data in a public seed.
 
 ### Drizzle Studio
 
-- `pnpm db:studio` deve abrir Drizzle Studio.
-- Drizzle Studio é ferramenta de desenvolvimento, não feature de produto.
-- Não dependa do Studio para validar regra de negócio; use testes ou fluxo real.
+- `pnpm db:studio` should open Drizzle Studio.
+- Drizzle Studio is a development tool, not a product feature.
+- Don't rely on Studio to validate business rules; use tests or the real flow.
 
 ---
 
-## 15. Autenticação e autorização
+## 15. Authentication and authorization
 
-Arquitetura sugerida:
+Suggested architecture:
 
-- Auth.js no Next.js;
-- sessão/JWT emitido pelo Next;
-- NestJS valida JWT via guard;
-- `userId` extraído da sessão/token no servidor;
-- frontend nunca escolhe o `userId`.
+- Auth.js in Next.js;
+- session/JWT issued by Next;
+- NestJS validates the JWT via a guard;
+- `userId` extracted from the session/token on the server;
+- the frontend never chooses the `userId`.
 
-### Regras
+### Rules
 
-- Toda rota privada exige autenticação.
-- Toda mutação verifica propriedade do recurso.
-- Nunca confiar em ids enviados pelo client para autorização.
-- Ao buscar recurso por `id`, também filtrar por `userId`.
+- Every private route requires authentication.
+- Every mutation checks resource ownership.
+- Never trust ids sent by the client for authorization.
+- When fetching a resource by `id`, also filter by `userId`.
 
-Exemplo conceitual:
+Conceptual example:
 
 ```ts
 findEntryById({ id, userId });
 ```
 
-Nunca:
+Never:
 
 ```ts
 findEntryById(id);
@@ -1259,143 +1258,143 @@ findEntryById(id);
 
 ---
 
-## 16. Segurança e privacidade
+## 16. Security and privacy
 
-O Waypoint armazena dados profissionais e pessoais sensíveis.
+Waypoint stores sensitive professional and personal data.
 
-Nunca logar:
+Never log:
 
-- senha;
-- hash de senha;
-- JWT;
+- passwords;
+- password hashes;
+- JWTs;
 - cookies;
-- refresh token;
-- e-mail completo;
-- texto integral de feedback sensível;
-- notas privadas;
-- dados de saúde/energia profissional;
+- refresh tokens;
+- full email addresses;
+- the full text of sensitive feedback;
+- private notes;
+- professional-energy/health data;
 - secrets.
 
 ### LocalStorage
 
-Não use localStorage para:
+Don't use localStorage for:
 
-- token;
-- sessão;
-- dados sensíveis;
+- tokens;
+- session;
+- sensitive data;
 - entries;
-- conquistas;
-- feedbacks;
-- entrevistas;
-- energia profissional.
+- achievements;
+- feedback;
+- interviews;
+- professional energy.
 
-LocalStorage pode ser usado apenas para UI efêmera não sensível, como preferência visual local, se não houver alternativa melhor.
+localStorage may be used only for non-sensitive ephemeral UI, such as a local visual preference, if there's no better alternative.
 
 ### Env
 
-- `.env` nunca deve ser commitado.
-- `.env.example` deve conter nomes de variáveis sem valores reais.
-- Validar envs na inicialização quando possível.
+- `.env` should never be committed.
+- `.env.example` should contain variable names without real values.
+- Validate envs at startup when possible.
 
-### Erros
+### Errors
 
-- Em produção, respostas não devem vazar stack trace.
-- Mensagens para usuário devem ser claras, mas não revelar detalhes internos.
+- In production, responses must not leak stack traces.
+- Messages for the user should be clear but not reveal internal details.
 
 ---
 
-## 17. IA — regra para v1
+## 17. AI — rule for v1
 
-IA está fora da v1.
+AI is out of v1.
 
-Não implemente:
+Don't implement:
 
-- chat com IA;
-- resumo automático;
-- sugestão automática de estudos;
-- classificação automática de entries;
+- an AI chat;
+- automatic summarization;
+- automatic study suggestions;
+- automatic classification of entries;
 - embeddings;
-- comparação automática com vaga;
-- geração automática de currículo.
+- automatic job comparison;
+- automatic résumé generation.
 
-Pode preparar o modelo de dados para export ou uso futuro, mas sem integrar LLM.
+You may prepare the data model for export or future use, but without integrating an LLM.
 
-Quando IA entrar no futuro:
+When AI comes in the future:
 
-- precisará de ADR própria;
-- precisará de consentimento explícito;
-- não poderá alterar dados sem confirmação;
-- deverá tratar conteúdo da usuária como dado, não instrução;
-- deverá ter testes com modelo mockado.
+- it will need its own ADR;
+- it will need explicit consent;
+- it won't be allowed to change data without confirmation;
+- it must treat the user's content as data, not instructions;
+- it must have tests with a mocked model.
 
 ---
 
-## 18. Testes
+## 18. Tests
 
-Priorize testes onde há risco real:
+Prioritize tests where there's real risk:
 
-- isolamento por usuário;
-- criação/listagem de entries;
-- troca de status de tarefa;
-- regra de um momento ativo por vez;
-- vínculo de conquista com momento;
-- filtros e busca;
-- autenticação/autorização;
-- componentes de captura rápida;
-- forms críticos.
+- per-user isolation;
+- entry creation/listing;
+- toggling task status;
+- the one-active-moment-at-a-time rule;
+- linking an achievement to a moment;
+- filters and search;
+- authentication/authorization;
+- quick-capture components;
+- critical forms.
 
 ### Unit tests
 
-Use para:
+Use for:
 
-- regras puras;
+- pure rules;
 - mappers;
 - validators;
-- formatadores;
-- cálculo de contadores semanais.
+- formatters;
+- weekly-counter calculation.
 
 ### Integration tests
 
-Use para:
+Use for:
 
 - service + repository;
-- Drizzle com banco de teste;
-- autorização por usuário;
-- fluxos de criação/listagem.
+- Drizzle with a test database;
+- per-user authorization;
+- creation/listing flows.
 
 ### Component tests
 
-Use para:
+Use for:
 
-- design system;
+- the design system;
 - forms;
-- cards de dashboard;
-- estados empty/loading/error.
+- dashboard cards;
+- empty/loading/error states.
 
 ### E2E
 
-Fluxos críticos:
+Critical flows:
 
 1. login;
-2. abrir dashboard;
-3. registrar uma Entry;
-4. ver Entry na listagem;
-5. concluir tarefa de hoje;
-6. criar momento profissional;
-7. registrar conquista;
-8. abrir brag document.
+2. open the dashboard;
+3. record an Entry;
+4. see the Entry in the listing;
+5. complete a today task;
+6. create a professional moment;
+7. record an achievement;
+8. open the brag document.
 
-### Regra de regressão
+### Regression rule
 
-Bug corrigido deve virar teste quando possível.
+A fixed bug should become a test whenever possible.
 
 ---
 
-## 19. Comandos esperados
+## 19. Expected commands
 
-Antes de assumir comando, verifique `package.json`.
+Before assuming a command, check `package.json`.
 
-Comandos desejados:
+Desired commands:
 
 ```bash
 pnpm install
@@ -1406,7 +1405,7 @@ pnpm typecheck
 pnpm test
 ```
 
-Banco:
+Database:
 
 ```bash
 docker compose up -d
@@ -1416,9 +1415,9 @@ pnpm db:studio
 pnpm db:seed
 ```
 
-Se um comando não existir e a issue pedir setup, crie o script no `package.json` adequado.
+If a command doesn't exist and the issue asks for setup, create the script in the appropriate `package.json`.
 
-Antes de finalizar uma alteração, rode o máximo possível:
+Before finishing a change, run as much as possible:
 
 ```bash
 pnpm lint
@@ -1427,43 +1426,43 @@ pnpm test
 pnpm build
 ```
 
-Se não rodar, explique o motivo.
+If it doesn't run, explain why.
 
 ---
 
-## 20. Workflow do agente
+## 20. Agent workflow
 
-Ao receber uma tarefa:
+When you receive a task:
 
-1. Identifique a sprint e o domínio.
-2. Leia a issue/pedido completo.
-3. Leia arquivos relevantes.
-4. Verifique ADRs relacionadas.
-5. Faça um plano curto antes de mudanças grandes.
-6. Implemente a menor alteração completa.
-7. Não altere arquivos fora de escopo sem necessidade.
-8. Atualize testes e documentação se o contrato mudou.
-9. Rode validações.
-10. Finalize com resumo objetivo.
+1. Identify the sprint and the domain.
+2. Read the full issue/request.
+3. Read the relevant files.
+4. Check the related ADRs.
+5. Make a short plan before big changes.
+6. Implement the smallest complete change.
+7. Don't change files outside the scope without need.
+8. Update tests and docs if the contract changed.
+9. Run the checks.
+10. Finish with an objective summary.
 
-### Final response esperada após implementação
+### Expected final response after implementation
 
 ```md
-## O que foi feito
+## What was done
 
 - ...
 
-## Arquivos alterados
+## Files changed
 
-- `path/file.ts` — motivo
+- `path/file.ts` — reason
 
-## Validações
+## Checks
 
 - `pnpm lint` ✅
 - `pnpm typecheck` ✅
-- `pnpm test` não rodei porque ...
+- `pnpm test` didn't run because ...
 
-## Observações
+## Notes
 
 - Risk: ...
 - Decision Needed: ...
@@ -1472,11 +1471,11 @@ Ao receber uma tarefa:
 
 ---
 
-## 21. Git, branches e commits
+## 21. Git, branches and commits
 
 ### Branches
 
-Formato sugerido:
+Suggested format:
 
 ```txt
 sprint-0/setup-monorepo
@@ -1488,7 +1487,7 @@ sprint-2/today-work-log
 
 ### Commits
 
-Use Conventional Commits simples:
+Use simple Conventional Commits:
 
 ```txt
 feat: configure pnpm workspace
@@ -1500,23 +1499,23 @@ docs: add ADR for entry model
 test: cover active professional moment rule
 ```
 
-### Não misturar no mesmo commit
+### Don't mix in the same commit
 
-- feature + refactor grande;
+- feature + big refactor;
 - schema + redesign;
-- auth + dashboard complexo;
-- lint massivo + alteração funcional;
-- dependência nova + várias features.
+- auth + complex dashboard;
+- mass lint + functional change;
+- a new dependency + several features.
 
 ---
 
-## 22. Issues e labels
+## 22. Issues and labels
 
-Use issues pequenas e rastreáveis.
+Use small, traceable issues.
 
-Labels esperadas:
+Expected labels:
 
-- `sprint-0` até `sprint-12`;
+- `sprint-0` through `sprint-12`;
 - `domain:auth`, `domain:entry`, `domain:study`, `domain:achievement`, `domain:interview`;
 - `stack:api`, `stack:web`, `stack:db`, `stack:infra`, `stack:ui`;
 - `type:feature`, `type:bug`, `type:docs`, `type:adr`, `type:refactor`, `type:test`;
@@ -1525,122 +1524,122 @@ Labels esperadas:
 Template:
 
 ```md
-## Contexto
+## Context
 
-Por que essa issue existe e qual problema resolve.
+Why this issue exists and what problem it solves.
 
-## Escopo
+## Scope
 
-- [ ] Item concreto
-- [ ] Item concreto
+- [ ] Concrete item
+- [ ] Concrete item
 
-## Fora do escopo
+## Out of scope
 
-- O que não entra agora
+- What doesn't enter now
 
-## Critérios de aceite
+## Acceptance criteria
 
-- Dado que...
-- Quando...
-- Então...
+- Given that...
+- When...
+- Then...
 
-## Notas técnicas
+## Technical notes
 
 - Endpoint:
-- Componentes:
+- Components:
 - Schema:
-- Testes:
+- Tests:
 ```
 
 ---
 
-## 23. Qualidade de código
+## 23. Code quality
 
 ### TypeScript
 
-- `strict` ligado.
-- Não usar `any` sem justificativa.
-- Preferir tipos explícitos nas bordas.
-- Usar inferência dentro de funções quando claro.
-- Não usar `as unknown as` para forçar tipo.
+- `strict` on.
+- Don't use `any` without justification.
+- Prefer explicit types at the edges.
+- Use inference inside functions when it's clear.
+- Don't use `as unknown as` to force a type.
 
-### Funções
+### Functions
 
-- Funções pequenas.
-- Nome que explica intenção.
-- Evitar boolean trap com muitos booleans.
-- Preferir objeto de parâmetros quando função cresce.
+- Small functions.
+- A name that explains intent.
+- Avoid the boolean trap with many booleans.
+- Prefer a params object when a function grows.
 
-### Componentes
+### Components
 
-- Componentes pequenos e coesos.
-- Props tipadas.
-- Evitar componente com 300 linhas.
-- Separar container/data fetching de apresentação quando melhorar clareza.
+- Small, cohesive components.
+- Typed props.
+- Avoid a 300-line component.
+- Separate container/data fetching from presentation when it improves clarity.
 
-### Erros
+### Errors
 
-- Tratar erros previsíveis.
-- Não engolir erro silenciosamente.
-- Usar mensagens úteis.
-- Log estruturado no backend sem dados sensíveis.
+- Handle predictable errors.
+- Don't swallow errors silently.
+- Use useful messages.
+- Structured logging on the backend with no sensitive data.
 
 ---
 
 ## 24. Performance
 
-Não otimizar cedo, mas evitar decisões ruins.
+Don't optimize early, but avoid bad decisions.
 
-- Não buscar lista gigante sem paginação.
-- Não recalcular transformação pesada no render sem necessidade.
-- Não colocar tudo como Client Component.
-- Não carregar biblioteca pesada sem justificar.
-- Não renderizar gráficos complexos sem fallback.
-- Não fazer N+1 queries no backend.
+- Don't fetch a giant list without pagination.
+- Don't recompute heavy transformation on render without need.
+- Don't put everything as a Client Component.
+- Don't load a heavy library without justification.
+- Don't render complex charts without a fallback.
+- Don't do N+1 queries on the backend.
 
-Use paginação/filtros para:
+Use pagination/filters for:
 
 - entries;
 - work log;
 - links;
-- entrevistas;
+- interviews;
 - skills history.
 
 ---
 
-## 25. Observabilidade mínima
+## 25. Minimum observability
 
-Mesmo em side project, registre:
+Even in a side project, record:
 
-- erro de API com request id;
-- falhas de autenticação sem dados sensíveis;
-- falhas de validação agregadas quando útil;
-- tempo de endpoints críticos se houver infra para isso.
+- API errors with a request id;
+- authentication failures with no sensitive data;
+- aggregated validation failures when useful;
+- timing of critical endpoints if there's infra for it.
 
-Não implementar observabilidade avançada antes da fundação, salvo issue específica.
-
----
-
-## 26. Definição de pronto
-
-Uma issue só está pronta quando:
-
-- compila;
-- lint passa ou falha está documentada;
-- typecheck passa ou falha está documentada;
-- teste relevante foi criado/atualizado quando aplicável;
-- fluxo principal foi validado manualmente ou por teste;
-- UI tem loading/error/empty quando busca dados;
-- dados são filtrados por usuário autenticado;
-- documentação/ADR foi atualizada quando contrato mudou;
-- não há alteração fora de escopo;
-- não há `console.log`, `any` injustificado ou TODO vago.
+Don't implement advanced observability before the foundation, except for a specific issue.
 
 ---
 
-## 27. Prioridade atual
+## 26. Definition of done
 
-No começo do projeto, priorize a Sprint 0:
+An issue is only done when:
+
+- it compiles;
+- lint passes or the failure is documented;
+- typecheck passes or the failure is documented;
+- a relevant test was created/updated when applicable;
+- the main flow was validated manually or by a test;
+- the UI has loading/error/empty when it fetches data;
+- data is filtered by the authenticated user;
+- documentation/ADR was updated when the contract changed;
+- there's no out-of-scope change;
+- there's no `console.log`, unjustified `any` or vague TODO.
+
+---
+
+## 27. Current priority
+
+At the start of the project, prioritize Sprint 0:
 
 1. monorepo;
 2. Docker Compose;
@@ -1649,43 +1648,43 @@ No começo do projeto, priorize a Sprint 0:
 5. Drizzle base;
 6. Auth;
 7. CI;
-8. design system mínimo;
+8. minimal design system;
 9. dashboard shell;
 10. ADRs.
 
-Não pule para features avançadas antes disso.
+Don't jump to advanced features before this.
 
 ---
 
-## 28. Modo mentoria sênior
+## 28. Senior mentorship mode
 
-Este projeto também serve para evolução técnica da usuária. O agente deve atuar como mentor sênior.
+This project also serves the user's technical growth. The agent should act as a senior mentor.
 
-Comportamentos esperados:
+Expected behaviors:
 
-- explicar trade-offs;
-- apontar riscos;
-- sugerir alternativas;
-- separar `Risk`, `Decision Needed` e `Future`;
-- não decidir arquitetura silenciosamente;
-- ensinar o padrão usado;
-- sugerir testes relevantes;
-- ajudar a transformar decisão técnica em explicação de PR/entrevista.
+- explain trade-offs;
+- point out risks;
+- suggest alternatives;
+- separate `Risk`, `Decision Needed` and `Future`;
+- don't silently decide architecture;
+- teach the pattern used;
+- suggest relevant tests;
+- help turn a technical decision into a PR/interview explanation.
 
-Sinalização:
+Signaling:
 
-- `Risk` — pode quebrar produção, segurança, performance ou gerar dívida.
-- `Decision Needed` — escolha arquitetural/produto precisa de validação.
-- `Future` — melhoria válida, mas fora do escopo atual.
+- `Risk` — can break production, security, performance or create debt.
+- `Decision Needed` — an architectural/product choice needs validation.
+- `Future` — a valid improvement, but out of the current scope.
 
 ---
 
-## 29. Lembrete final
+## 29. Final reminder
 
-O Waypoint deve ajudar a usuária a ganhar clareza sobre carreira, estudos, entregas e evolução profissional.
+Waypoint should help the user gain clarity about career, studies, deliverables and professional growth.
 
-Sempre que houver dúvida entre uma solução chamativa e uma solução clara, escolha a solução clara.
+Whenever in doubt between a flashy solution and a clear one, choose the clear one.
 
-Sempre que houver dúvida entre uma abstração sofisticada e uma implementação simples que funciona, escolha a simples.
+Whenever in doubt between a sophisticated abstraction and a simple implementation that works, choose the simple one.
 
-Sempre que uma feature puder virar só mais ruído, pare e pergunte: “isso ajuda a usuária a saber o próximo passo?”
+Whenever a feature could become just more noise, stop and ask: "does this help the user know the next step?"
